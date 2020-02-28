@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import API from "../utils/API";
 import { Input, FormBtn } from "./Form";
+import { Link } from "react-router-dom";
 
 function SignUpForm() {
 
@@ -32,11 +33,11 @@ function SignUpForm() {
           <h2>Sign Up Form</h2>
           <form className="signup">
             <div className="form-group">
-              <label for="exampleInputEmail1">Email address</label>
+              <label htmlFor="exampleInputEmail1">Email address</label>
               <Input onChange={handleInputChange} type="email" name="email" id="email-input" placeholder="Email" />
             </div>
             <div className="form-group">
-              <label for="exampleInputPassword1">Password</label>
+              <label htmlFor="exampleInputPassword1">Password</label>
               <Input onChange={handleInputChange} type="password" name="password" id="password-input" placeholder="Password" />
             </div>
             <div style={{ display: "none" }} id="alert" className="alert alert-danger" role="alert">
@@ -46,7 +47,7 @@ function SignUpForm() {
             <FormBtn type="submit" onClick={handleFormSubmit}>Sign Up</FormBtn>
           </form>
           <br />
-          <p>Or log in <a to="/">here</a></p>
+          <p>Or log in <Link to="/">here</Link></p>
         </div>
       </div>
     </div>
