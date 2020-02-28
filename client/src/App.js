@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
+import Search from "./pages/Search";
 import './App.css';
 
 function App() {
@@ -13,8 +14,11 @@ function App() {
       <Route exact path="/signup">
         <SignUp />
       </Route>
+      <Route exact path="/search">
+        <Search />
+      </Route>
     </Router>
- 
+
   );
 }
 
