@@ -9,17 +9,17 @@ function LoginForm() {
                     <h2>Login Form</h2>
                     <form className="login">
                         <div className="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
+                            <label htmlFor="exampleInputEmail1">Email address</label>
                             <input type="email" className="form-control" id="email-input" placeholder="Email" />
                         </div>
                         <div className="form-group">
-                            <label for="exampleInputPassword1">Password</label>
+                            <label htmlFor="exampleInputPassword1">Password</label>
                             <input type="password" className="form-control" id="password-input" placeholder="Password" />
                         </div>
                         <button type="submit" className="btn btn-default">Login</button>
                     </form>
                     <br />
-                    <p>Or sign up <Link to="/signup" className={window.location.pathname === "/signup"}>here</Link></p>
+                    <p>Or sign up <Link to="/signup" className="/signup">here</Link></p>
                 </div>
             </div>
         </div>
