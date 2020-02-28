@@ -8,8 +8,12 @@ import './App.css';
 function App() {
   return (
     <Router>
-      <Route exact path="/" component={Login} />
-      <Route exact path="/signup" component={SignUp} />
+      <Route exact path="/">
+        <Login />
+      </Route>
+      <Route exact path="/signup">
+        <SignUp />
+      </Route>
     </Router>
  
   );
