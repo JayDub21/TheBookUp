@@ -20,6 +20,10 @@ const userSeed = [
   {
     email: "blah@death.com",
     password: "JDkilla"
+  },
+  {
+    email: "lala@example.com",
+    password: "lalala"
   }];
 
 db.User
