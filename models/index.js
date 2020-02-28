@@ -1,5 +1,6 @@
-module.exports ={
-    User: require("./user")
+module.exports = {
+    User: require("./user"),
+    Listing: require("./listing")
 };
 // var mongoose = require(mongoose),
 //     User = require('./user');
