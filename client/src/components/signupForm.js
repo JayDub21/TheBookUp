@@ -14,7 +14,7 @@ function SignUpForm() {
     setFormObject({ ...formObject, [name]: value })
   };
 
-  //When the form is submitted, use the API.saveUser methode to save the user to the database
+  //When the form is submitted, use the API.saveUser method to save the user to the database
   function handleFormSubmit(event) {
     event.preventDefault();
     if (formObject.email && formObject.password) {
@@ -24,6 +24,11 @@ function SignUpForm() {
       })
         .catch(err => console.log(err));
     }
+  }
+
+  function getStuff(event) {
+    event.preventDefault();
+    API.getUser();
   }
 
   return (
@@ -45,6 +50,7 @@ function SignUpForm() {
               <span className="sr-only">Error:</span> <span className="msg"></span>
             </div>
             <FormBtn type="submit" onClick={handleFormSubmit}>Sign Up</FormBtn>
+            <FormBtn type="submit" onClick={getStuff}>Get users</FormBtn>
           </form>
           <br />
           <p>Or log in <Link to="/">here</Link></p>

@@ -18,11 +18,11 @@ const userSeed = [
     password: "JDkilla"
   },
   {
-    email: "blah@example.com",
+    email: "blah@death.com",
     password: "JDkilla"
   }];
 
-  db.User
+db.User
   .remove({})
   .then(() => db.User.collection.insertMany(userSeed))
   .then(data => {
