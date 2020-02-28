@@ -28,8 +28,9 @@ app.get("*", (req, res) => {
 
 // Connect to the Mongo DB
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/thebookupDB"
-);
+    process.env.MONGODB_URI || "mongodb://localhost/thebookupDB")
+    .then(() => console.log("Database is connected"))
+    .catch(err => console.log(err));
 
 // Start the API server
 app.listen(PORT, function () {
