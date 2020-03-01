@@ -1,8 +1,9 @@
 //=================================================================
 //Lets do it
 //=================================================================
+require("dotenv").config();
 const express = require("express");
-const express = require("express-session")
+const session = require("express-session")
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
@@ -15,6 +16,9 @@ const db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//sessions
+app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }))
+app.use(express.json())
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
