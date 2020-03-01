@@ -14,10 +14,10 @@ function SignUpForm() {
 
 
   //Handles updating the component state while user is typing
-  function handleInputChange(event) {
+  // function handleInputChange(event) {
     // const { name, value } = event.target;
     // setFormObject({ ...formObject, [name]: value })
-  };
+  // };
 
   //When the form is submitted, use the API.saveUser method to save the user to the database
   function handleFormSubmit(event) {

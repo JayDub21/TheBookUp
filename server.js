@@ -8,6 +8,9 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+//Models for sending email and password to database
+const db = require("./models");
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -25,7 +28,10 @@ app.get("/api/hello", function (req, res){
 
 //Setting up sign up route
 app.post("/api/signup", function (req, res){
-    res.json({...req.body, server: true});
+    db.User.create(req.body). then(dbUser => {
+        res.json(dbUser);
+    })
+    // res.json({...req.body, server: true});
 })
 
 // Add routes, both API and view 
