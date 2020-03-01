@@ -72,7 +72,7 @@ app.post("/api/login", passport.authenticate("local"), (req, res) => {
 })
 
 //logout route w/ user Authentication
-app.post("/api/logout", passport.authenticate("local"), (req, res) => {
+app.get("/api/logout", passport.authenticate("local"), (req, res) => {
     req.logout();
     res.sendStatus(200);
 })
@@ -80,7 +80,7 @@ app.post("/api/logout", passport.authenticate("local"), (req, res) => {
 //Create a route that will only work for logged in users
 app.get("/api/user/me", (req, res) => {
     if(!req.user){
-        res.status(401).end();
+        res.status(401).send("Welp I guess you don't access to here ;)");
     } else {
         res.json({
             email : req.user.email
