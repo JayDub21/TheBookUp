@@ -3,8 +3,9 @@
 //=================================================================
 require("dotenv").config();
 const express = require("express");
-const session = require("express-session")
+const session = require("express-session");
 const mongoose = require("mongoose");
+const passport = require("./config/passport");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -18,7 +19,12 @@ app.use(express.json());
 
 //sessions
 app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }))
-app.use(express.json())
+//Using passport to check user authentication
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
@@ -40,21 +46,24 @@ app.post("/api/signup", function (req, res) {
 //Login route
 app.post("/api/login", function (req, res) {
     //Do I have an entry with this email address
-    db.User.findOne({ email: req.body.email }).then(dbUser => {
-        if (!dbUser) {
-            return res.status(401).json(false)
-        } else {
-            console.log(dbUser);
-            dbUser.checkPassword(req.body.password).then(isMatch => {
-                if (isMatch) {
-                    console.log("signed in");
-                    return res.status(200).json(dbUser);
-                } else {
-                    return res.status(401).json(false);
-                }
-            })
-        }
-    }).catch(err => console.log(err));
+    //=========================================
+    //Moving everything in here to config/passport
+    //=========================================
+    // db.User.findOne({ email: req.body.email }).then(dbUser => {
+    //     if (!dbUser) {
+    //         return res.status(401).json(false)
+    //     } else {
+    //         console.log(dbUser);
+    //         dbUser.checkPassword(req.body.password).then(isMatch => {
+    //             if (isMatch) {
+    //                 console.log("signed in");
+    //                 return res.status(200).json(dbUser);
+    //             } else {
+    //                 return res.status(401).json(false);
+    //             }
+    //         })
+    //     }
+    // }).catch(err => console.log(err));
 })
 
 // Add routes, both API and view 

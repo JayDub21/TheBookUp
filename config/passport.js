@@ -1,7 +1,8 @@
 const passport = require("passport");
 const localStrategy = require("passport-local").Strategy;
 const { User } = require("../models");
-
+//Creating a localStragey 
+//localStrategy assumes that you are using a username by default. Change it to recognize "email"
 passport.use(new localStrategy({ usernameField: "email" }, function (email, password, done) {
     User.findOne({ email: email }).then(dbUser => {
         if (!dbUser) {
@@ -11,7 +12,7 @@ passport.use(new localStrategy({ usernameField: "email" }, function (email, pass
                 if (isMatch) {
                     return done(null, dbUser);
                 } else {
-                    return done(null, false, {message: "Incorrect username or password"});
+                    return done(null, false, { message: "Incorrect username or password" });
                 }
             })
         }
