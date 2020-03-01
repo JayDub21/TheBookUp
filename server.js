@@ -36,7 +36,7 @@ app.get("/api/hello", function (req, res) {
     res.send("hello");
 })
 
-//Setting up sign up route
+//Sign up route
 app.post("/api/signup", function (req, res) {
     db.User.create(req.body).then(dbUser => {
         res.json(dbUser);
@@ -44,7 +44,7 @@ app.post("/api/signup", function (req, res) {
 })
 
 //Login route
-app.post("/api/login", function (req, res) {
+// app.post("/api/login", function (req, res) {
     //Do I have an entry with this email address
     //=========================================
     //Moving everything in here to config/passport
@@ -64,6 +64,17 @@ app.post("/api/login", function (req, res) {
     //         })
     //     }
     // }).catch(err => console.log(err));
+// })
+
+//login route w/ user Authentication
+app.post("/api/login", passport.authenticate("local"), (req, res) => {
+    res.json(req.user);
+})
+
+//logout route w/ user Authentication
+app.post("/api/logout", passport.authenticate("local"), (req, res) => {
+    req.logout();
+    res.sendStatus(200);
 })
 
 // Add routes, both API and view 
