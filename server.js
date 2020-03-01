@@ -1,8 +1,3 @@
-// Testing comment
-
-//Testing out splitting from branches
-
-
 //=================================================================
 //Lets do it
 //=================================================================
@@ -16,6 +11,7 @@ const PORT = process.env.PORT || 3001;
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
@@ -25,6 +21,11 @@ if (process.env.NODE_ENV === "production") {
 
 app.get("/api/hello", function (req, res){
     res.send("hello");
+})
+
+//Setting up sign up route
+app.post("/api/signup", function (req, res){
+    res.json({...req.body, server: true});
 })
 
 // Add routes, both API and view 
