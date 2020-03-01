@@ -22,16 +22,35 @@ if (process.env.NODE_ENV === "production") {
 
 //Playing with api routes outside of route folder
 
-app.get("/api/hello", function (req, res){
+app.get("/api/hello", function (req, res) {
     res.send("hello");
 })
 
 //Setting up sign up route
-app.post("/api/signup", function (req, res){
-    db.User.create(req.body). then(dbUser => {
+app.post("/api/signup", function (req, res) {
+    db.User.create(req.body).then(dbUser => {
         res.json(dbUser);
-    })
-    // res.json({...req.body, server: true});
+    }).catch(err => console.log(err));
+})
+
+//Login route
+app.post("/api/login", function (req, res) {
+    //Do I have an entry with this email address
+    db.User.findOne({ email: req.body.email }).then(dbUser => {
+        if (!dbUser) {
+            return res.status(401).json(false)
+        } else {
+            console.log(dbUser);
+            dbUser.checkPassword(req.body.password).then(isMatch => {
+                if (isMatch) {
+                    console.log("signed in");
+                    return res.status(200).json(dbUser);
+                } else {
+                    return res.status(401).json(false);
+                }
+            })
+        }
+    }).catch(err => console.log(err));
 })
 
 // Add routes, both API and view 
