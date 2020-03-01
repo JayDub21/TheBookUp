@@ -77,6 +77,17 @@ app.post("/api/logout", passport.authenticate("local"), (req, res) => {
     res.sendStatus(200);
 })
 
+//Create a route that will only work for logged in users
+app.get("/api/user/me", (req, res) => {
+    if(!req.user){
+        res.status(401).end();
+    } else {
+        res.json({
+            email : req.user.email
+        })
+    }
+})
+
 // Add routes, both API and view 
 app.use(routes);
 
