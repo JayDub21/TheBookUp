@@ -32,14 +32,14 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
 }
 
-//Playing with api routes outside of route folder
 
-app.get("/api/hello", function (req, res) {
-    res.send("hello");
+app.get("/api/hello", function (req, res){
+    res.send("SUCCESS =================== Server is talking to the frontend");
 })
 
 //New Auth login routes ==== Moved to routes/index.js
 // app.use("/api/auth/", authRoutes);
+//===================================================
 
 //Sign up route ======= Moved to /routes/api/authRoutes========
 // app.post("/api/auth/signup", function (req, res) {
@@ -49,7 +49,7 @@ app.get("/api/hello", function (req, res) {
 // })
 // ============================================================
 
-//Login route
+//Login route =================================================
 // app.post("/api/login", function (req, res) {
     //Do I have an entry with this email address
     //=========================================
@@ -71,6 +71,7 @@ app.get("/api/hello", function (req, res) {
     //     }
     // }).catch(err => console.log(err));
 // })
+//================================================================
 
 //login route w/ user Authentication ======= Moved to /routes/api/authRoutes========
 // app.post("/api/auth/login", passport.authenticate("local"), (req, res) => {
@@ -96,6 +97,7 @@ app.get("/api/user/me", isAuthenticated, (req, res) => {
 app.get("/api/user/dashboard", isAuthenticated, (req, res) => {
     res.json("Our User Dashboard lives here :)")
 })
+
 // Add routes, both API and view 
 app.use(routes);
 
