@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import BookSearch from "../components/BookSearch";
 import request from "superagent";
+import BookList from "../components/BookList"
 
 class Post extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            book: [],
+            books: [],
             searchField: ""
         }
     }
@@ -18,6 +19,7 @@ class Post extends Component {
             .query({ q: this.state.searchField })
             .then((data) => {
                 console.log(data)
+                this.setState({ books: [...data.body.items] })
             })
     }
 
@@ -27,7 +29,10 @@ class Post extends Component {
 
     render() {
         return (
-            <BookSearch searchBook={this.searchBook} handleSearch={this.handleSearch} />
+            <div>
+                <BookSearch searchBook={this.searchBook} handleSearch={this.handleSearch} />
+                <BookList books={this.state.books} />
+            </div>
         );
     }
 }
