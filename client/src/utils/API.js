@@ -13,17 +13,14 @@ export default {
     signup: (email, password) => {
         return axios.post("/api/auth/signup", { email, password });
     }
-<<<<<<< HEAD
 };
-=======
 
-}
+// }
 
-//Save a user to database
+// Save a user to database
 //     saveUser: function (userData) {
 //         return axios.post("/api/users", userData);
 //     },
 //     getUser: function () {
 //         console.log(axios.get("/api/users"));
 //     }
->>>>>>> dev

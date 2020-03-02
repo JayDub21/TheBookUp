@@ -18,9 +18,9 @@ function NavBar() {
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
             <Link
-              to="/addBook"
+              to="/post"
               className={
-                window.location.pathname === "/addBook"
+                window.location.pathname === "/post"
                   ? "nav-link active"
                   : "nav-link"
               }
