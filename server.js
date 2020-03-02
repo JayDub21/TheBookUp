@@ -100,38 +100,38 @@ app.get("/api/hello", function (req, res) {
 // })
 //===================================================================================================
 
-//Creating Listing Collection
-app.post("/api/listing", function (req, res) {
-    db.Listing.create(req.body).then(dbListing => {
-        res.json(dbListing);
-    }).catch(err => console.log(err));
-})
+// //Creating Listing Collection
+// app.post("/api/listing", function (req, res) {
+//     db.Listing.create(req.body).then(dbListing => {
+//         res.json(dbListing);
+//     }).catch(err => console.log(err));
+// })
 
-//Getting all books in our collections
-app.get("/api/listing", function (req, res){
-    db.Listing
-        .find(req.query)
-        .sort({ title: "desc" })
-        .then(dbListing => res.json(dbListing))
-        .catch(err => res.status(422).json(err));
-})
+// //Getting all books in our collections
+// app.get("/api/listing", function (req, res) {
+//     db.Listing
+//         .find(req.query)
+//         // .sort({ title: "desc" })
+//         .then(dbListing => res.json(dbListing))
+//         .catch(err => res.status(422).json(err));
+// })
 
-//Getting books by ID
-app.get("/api/listing/:id", function (req, res){
-    db.Listing
-        .findById(req.params.id)
-        .then(dbListing => res.json(dbListing))
-        .catch(err => res.status(422).json(err))
-})
+// //Getting books by ID
+// app.get("/api/listing/:id", function (req, res) {
+//     db.Listing
+//         .findById(req.params.id)
+//         .then(dbListing => res.json(dbListing))
+//         .catch(err => res.status(422).json(err))
+// })
 
-//Deleting book
-app.delete("/api/listing/:id", function (req, res){
-    db.Listing
-        .findById({_id: req.params.id})
-        .then(dbListing => dbListing.remove())
-        .then(dbListing => res.json(dbListing))
-        .catch(err => res.status(422).json(err))
-})
+// //Deleting book
+// app.delete("/api/listing/:id", function (req, res) {
+//     db.Listing
+//         .findById({ _id: req.params.id })
+//         .then(dbListing => dbListing.remove())
+//         .then(dbListing => res.json(dbListing))
+//         .catch(err => res.status(422).json(err))
+// })
 
 
 // Add routes, both API and view 
