@@ -6,6 +6,7 @@ const express = require("express");
 const session = require("express-session");
 const mongoose = require("mongoose");
 const passport = require("./config/passport");
+const isAuthenticated = require("./middleware/isAuthenticated")
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -78,7 +79,7 @@ app.get("/api/logout", passport.authenticate("local"), (req, res) => {
 })
 
 //Create a route that will only work for logged in users
-app.get("/api/user/me", (req, res) => {
+app.get("/api/user/me", isAuthenticated, (req, res) => {
     if(!req.user){
         res.status(401).send("Welp I guess you don't access to here ;)");
     } else {
