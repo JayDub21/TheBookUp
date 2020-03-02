@@ -3,22 +3,23 @@ import axios from "axios";
 export default {
 
     login: (email, password) => {
-        axios.post("/api/auth/login", {email, password});
+        return axios.post("/api/auth/login", { email, password });
     },
 
     logout: () => {
-        axios.get("/api/auth/logout", {email, password});
+        return axios.get("/api/auth/logout");
     },
 
     signup: (email, password) => {
-        axios.post("/api/auth/signup", {email, password});
-    },
+        return axios.post("/api/auth/signup", { email, password });
+    }
 
-    //Save a user to database
+}
+
+//Save a user to database
 //     saveUser: function (userData) {
 //         return axios.post("/api/users", userData);
 //     },
 //     getUser: function () {
 //         console.log(axios.get("/api/users"));
 //     }
-// }

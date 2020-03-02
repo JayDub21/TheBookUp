@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 const passport = require("./config/passport");
 const isAuthenticated = require("./middleware/isAuthenticated")
 const routes = require("./routes");
+const authRoutes = require("./routes/api/authRoutes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -37,12 +38,16 @@ app.get("/api/hello", function (req, res) {
     res.send("hello");
 })
 
-//Sign up route
-app.post("/api/auth/signup", function (req, res) {
-    db.User.create(req.body).then(dbUser => {
-        res.json(dbUser);
-    }).catch(err => console.log(err));
-})
+//New Auth login routes ==== Moved to routes/index.js
+// app.use("/api/auth/", authRoutes);
+
+//Sign up route ======= Moved to /routes/api/authRoutes========
+// app.post("/api/auth/signup", function (req, res) {
+//     db.User.create(req.body).then(dbUser => {
+//         res.json(dbUser);
+//     }).catch(err => console.log(err));
+// })
+// ============================================================
 
 //Login route
 // app.post("/api/login", function (req, res) {
@@ -67,16 +72,18 @@ app.post("/api/auth/signup", function (req, res) {
     // }).catch(err => console.log(err));
 // })
 
-//login route w/ user Authentication
-app.post("/api/auth/login", passport.authenticate("local"), (req, res) => {
-    res.json(req.user);
-})
+//login route w/ user Authentication ======= Moved to /routes/api/authRoutes========
+// app.post("/api/auth/login", passport.authenticate("local"), (req, res) => {
+//     res.json(req.user);
+// })
 
-//logout route w/ user Authentication
-app.get("/api/auth/logout", passport.authenticate("local"), (req, res) => {
-    req.logout();
-    res.sendStatus(200);
-})
+// //logout route w/ user Authentication
+// app.get("/api/auth/logout", (req, res) => {
+//     req.logout();
+//     res.sendStatus(200);
+// })
+// ================================================================================
+
 
 //Create a route that will only work for logged in users
 app.get("/api/user/me", isAuthenticated, (req, res) => {
