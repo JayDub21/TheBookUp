@@ -4,7 +4,6 @@ import NavBar from "./components/navBar";
 import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
 import Post from "./pages/Post";
-
 import axios from "axios";
 
 function App() {
