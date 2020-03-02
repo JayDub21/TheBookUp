@@ -12,6 +12,10 @@ export default {
 
     signup: (email, password) => {
         return axios.post("/api/auth/signup", { email, password });
+    },
+
+    listBook: (author, title, publishedDate, email, ISBN, price, image) => {
+        return axios.post("/api/listing/", { author, title, publishedDate, email, ISBN, price, image })
     }
 };
 

@@ -30,7 +30,7 @@ class Post extends Component {
         return (
             <div>
                 <BookSearch searchBook={this.searchBook} handleSearch={this.handleSearch} />
-                <BookList books={this.state.books} />
+                <BookList books={this.state.books} handleSearch={this.handleSearch} />
             </div>
         );
     }
