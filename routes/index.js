@@ -10,6 +10,9 @@ router.use("/api/user/", apiUser);
 //New auth routes
 router.use("/api/auth/", authRoutes);
 
+//Listing routes
+
+
 
 // If no API routes are hit, send the React app
 router.use(function(req, res) {
