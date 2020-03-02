@@ -1,11 +1,24 @@
 import axios from "axios";
 
 export default {
-    //Save a user to database
-    saveUser: function (userData) {
-        return axios.post("/api/users", userData);
+
+    login: (email, password) => {
+        axios.post("/api/auth/login", {email, password});
     },
-    getUser: function () {
-        console.log(axios.get("/api/users"));
-    }
-}
+
+    logout: () => {
+        axios.get("/api/auth/logout", {email, password});
+    },
+
+    signup: (email, password) => {
+        axios.post("/api/auth/signup", {email, password});
+    },
+
+    //Save a user to database
+//     saveUser: function (userData) {
+//         return axios.post("/api/users", userData);
+//     },
+//     getUser: function () {
+//         console.log(axios.get("/api/users"));
+//     }
+// }

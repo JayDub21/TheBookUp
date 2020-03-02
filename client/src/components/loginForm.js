@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Input, FormBtn } from "./Form";
+import API from "../utils/API";
 
 import axios from "axios";
 
@@ -17,19 +18,28 @@ function LoginForm() {
 
     function handleLoginSubmit(event) {
         event.preventDefault();
-        axios.post("/api/auth/login", { email, password }).then(response => {
+        API.login(email, password).then(response => {
             setIsLoggedIn(true);
             axios.get("/api/user/dashboard").then(response => {
                 setPrivateInfo({ secret: response.data })
             })
-        });
+        })
+        // axios.post("/api/auth/login", { email, password }).then(response => {
+        //     axios.get("/api/user/dashboard").then(response => {
+        //         setPrivateInfo({ secret: response.data })
+        //     })
+        //     setIsLoggedIn(true);
+        // });
     }
 
     function handleLogoutSubmit(event) {
         event.preventDefault();
-        axios.get("/api/auth/logout").then(response => {
+        API.logout().then(response => {
             setIsLoggedIn(false);
-        });
+        })
+        // axios.get("/api/auth/logout").then(response => {
+        //     setIsLoggedIn(false);
+        // });
     }
 
     function renderPrivateSection() {
