@@ -38,7 +38,7 @@ app.get("/api/hello", function (req, res) {
 })
 
 //Sign up route
-app.post("/api/signup", function (req, res) {
+app.post("/api/auth/signup", function (req, res) {
     db.User.create(req.body).then(dbUser => {
         res.json(dbUser);
     }).catch(err => console.log(err));
@@ -68,12 +68,12 @@ app.post("/api/signup", function (req, res) {
 // })
 
 //login route w/ user Authentication
-app.post("/api/login", passport.authenticate("local"), (req, res) => {
+app.post("/api/auth/login", passport.authenticate("local"), (req, res) => {
     res.json(req.user);
 })
 
 //logout route w/ user Authentication
-app.get("/api/logout", passport.authenticate("local"), (req, res) => {
+app.get("/api/auth/logout", passport.authenticate("local"), (req, res) => {
     req.logout();
     res.sendStatus(200);
 })

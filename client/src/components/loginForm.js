@@ -17,7 +17,7 @@ function LoginForm() {
 
     function handleLoginSubmit(event) {
         event.preventDefault();
-        axios.post("/api/login", { email, password }).then(response => {
+        axios.post("/api/auth/login", { email, password }).then(response => {
             setIsLoggedIn(true);
             axios.get("/api/user/dashboard").then(response => {
                 setPrivateInfo({ secret: response.data })
@@ -27,7 +27,7 @@ function LoginForm() {
 
     function handleLogoutSubmit(event) {
         event.preventDefault();
-        axios.get("/api/logout").then(response => {
+        axios.get("/api/auth/logout").then(response => {
             setIsLoggedIn(false);
         });
     }
@@ -36,7 +36,7 @@ function LoginForm() {
         if (isLoggedIn) {
             return ((
                 <div>
-                    Our user Dashboard goes here!!!
+                    <h1>{privateInfo.secret}</h1>
                 </div>
             ))
         }
