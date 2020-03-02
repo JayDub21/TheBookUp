@@ -33,8 +33,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 
-app.get("/api/hello", function (req, res){
-    res.send("SUCCESS =================== Server is talking to the frontend");
+app.get("/api/hello", function (req, res) {
+    res.send("SUCCESS ===================Server is talking to the frontend");
 })
 
 //New Auth login routes ==== Moved to routes/index.js
@@ -51,25 +51,25 @@ app.get("/api/hello", function (req, res){
 
 //Login route =================================================
 // app.post("/api/login", function (req, res) {
-    //Do I have an entry with this email address
-    //=========================================
-    //Moving everything in here to config/passport
-    //=========================================
-    // db.User.findOne({ email: req.body.email }).then(dbUser => {
-    //     if (!dbUser) {
-    //         return res.status(401).json(false)
-    //     } else {
-    //         console.log(dbUser);
-    //         dbUser.checkPassword(req.body.password).then(isMatch => {
-    //             if (isMatch) {
-    //                 console.log("signed in");
-    //                 return res.status(200).json(dbUser);
-    //             } else {
-    //                 return res.status(401).json(false);
-    //             }
-    //         })
-    //     }
-    // }).catch(err => console.log(err));
+//Do I have an entry with this email address
+//=========================================
+//Moving everything in here to config/passport
+//=========================================
+// db.User.findOne({ email: req.body.email }).then(dbUser => {
+//     if (!dbUser) {
+//         return res.status(401).json(false)
+//     } else {
+//         console.log(dbUser);
+//         dbUser.checkPassword(req.body.password).then(isMatch => {
+//             if (isMatch) {
+//                 console.log("signed in");
+//                 return res.status(200).json(dbUser);
+//             } else {
+//                 return res.status(401).json(false);
+//             }
+//         })
+//     }
+// }).catch(err => console.log(err));
 // })
 //================================================================
 
@@ -83,21 +83,22 @@ app.get("/api/hello", function (req, res){
 //     req.logout();
 //     res.sendStatus(200);
 // })
-// ================================================================================
+// ========================================================================================
 
 
-//Create a route that will only work for logged in users
-app.get("/api/user/me", isAuthenticated, (req, res) => {
-        res.json({
-            email : req.user.email
-        })
-    })
+//Create a route that will only work for logged in users =======Moved to routes/api/user.js
+// app.get("/api/user/me", isAuthenticated, (req, res) => {
+//     res.json({
+//         email: req.user.email
+//     })
+// })
+//==================================================================================================
 
-//route to a display of user dashboard after successful login
-app.get("/api/user/dashboard", isAuthenticated, (req, res) => {
-    res.json("Our User Dashboard lives here :)")
-})
-
+//route to a display of user dashboard after successful login ========== Moved to routes/api/user.js
+// app.get("/api/user/dashboard", isAuthenticated, (req, res) => {
+//     res.json("Our User Dashboard lives here :)")
+// })
+//===================================================================================================
 // Add routes, both API and view 
 app.use(routes);
 
