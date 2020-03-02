@@ -11,11 +11,11 @@ router.use("/api/user/", apiUser);
 router.use("/api/auth/", authRoutes);
 
 //Listing routes
-
+router.use("/api/listing/", apiListing);
 
 
 // If no API routes are hit, send the React app
-router.use(function(req, res) {
+router.use(function (req, res) {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
 
