@@ -13,6 +13,9 @@ export default {
     signup: (email, password) => {
         return axios.post("/api/auth/signup", { email, password });
     }
+<<<<<<< HEAD
+};
+=======
 
 }
 
@@ -23,3 +26,4 @@ export default {
 //     getUser: function () {
 //         console.log(axios.get("/api/users"));
 //     }
+>>>>>>> dev
