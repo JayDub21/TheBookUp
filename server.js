@@ -80,15 +80,15 @@ app.get("/api/logout", passport.authenticate("local"), (req, res) => {
 
 //Create a route that will only work for logged in users
 app.get("/api/user/me", isAuthenticated, (req, res) => {
-    if(!req.user){
-        res.status(401).send("Welp I guess you don't access to here ;)");
-    } else {
         res.json({
             email : req.user.email
         })
-    }
-})
+    })
 
+//route to a display of user dashboard after successful login
+app.get("/api/user/dashboard", isAuthenticated, (req, res) => {
+    res.json("Our User Dashboard lives here :)")
+})
 // Add routes, both API and view 
 app.use(routes);
 
