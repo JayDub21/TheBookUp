@@ -14,6 +14,7 @@ export default {
         return axios.post("/api/auth/signup", { email, password });
     },
 
+
     listBook: (image, title, author, publishedDate, ISBN, email) => {
         return axios.post("/api/listing/", { author, title, publishedDate, ISBN, image, email })
     }
