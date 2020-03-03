@@ -30,15 +30,15 @@ function LoginForm() {
     // });
   }
 
-  function handleLogoutSubmit(event) {
-    event.preventDefault();
-    API.logout().then(response => {
-      setIsLoggedIn(false);
-    });
-    // axios.get("/api/auth/logout").then(response => {
-    //     setIsLoggedIn(false);
-    // });
-  }
+  //   function handleLogoutSubmit(event) {
+  //     event.preventDefault();
+  //     API.logout().then(response => {
+  //       setIsLoggedIn(false);
+  //     });
+  // axios.get("/api/auth/logout").then(response => {
+  //     setIsLoggedIn(false);
+  // });
+  //   }
 
   function renderPrivateSection() {
     if (isLoggedIn) {
@@ -51,48 +51,48 @@ function LoginForm() {
   }
 
   return (
-    <div className="container">
-      <h2>Login Form</h2>
-      <form className="login">
-        <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Email address</label>
-          <Input
-            value={email}
-            onChange={event => {
-              setEmail(event.target.value);
-            }}
-            type="email"
-            id="email-input"
-            placeholder="Email"
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Password</label>
-          <Input
-            value={password}
-            onChange={event => {
-              setPassword(event.target.value);
-            }}
-            type="password"
-            id="password-input"
-            placeholder="Password"
-          />
-        </div>
-        <FormBtn type="submit" onClick={handleLoginSubmit}>
-          Login
-        </FormBtn>
-        <FormBtn type="submit" onClick={handleLogoutSubmit}>
-          Sign Out
-        </FormBtn>
-      </form>
-      <br />
-      <p>
-        Or sign up{" "}
-        <Link to="/signup" className="/signup">
-          here
-        </Link>
-      </p>
+    <div>
+      <div className="container">
+        <h2 id="loginTitle">Login</h2>
+        <div className="divider div-transparent div-arrow-down"></div>
+        <form className="login">
+          <div className="form-group">
+            <Input
+              value={email}
+              onChange={event => {
+                setEmail(event.target.value);
+              }}
+              type="email"
+              id="email-input"
+              placeholder="Email"
+            />
+          </div>
+          <div className="form-group">
+            <Input
+              value={password}
+              onChange={event => {
+                setPassword(event.target.value);
+              }}
+              type="password"
+              id="password-input"
+              placeholder="Password"
+            />
+          </div>
+          <br />
+          <div className="btnStyle">
+            <div className="btn btn-md btn-success">
+              <Link to="/signup" className="/signup">
+                <div id="signUp">Sign Up</div>
+              </Link>
+            </div>
 
+            <FormBtn type="submit" onClick={handleLoginSubmit}>
+              Login
+            </FormBtn>
+          </div>
+        </form>
+        <br />
+      </div>
       {/* Testing out a small a dashboard div to appear when use signs in */}
       <div>{renderPrivateSection()}</div>
     </div>
