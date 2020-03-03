@@ -13,33 +13,32 @@ html {
 .container {
   margin-top: 3%;
   justify-content: center;
-}
-.loginForm {
-  top: 40px;
   text-align: center;
-  width: 40%;
-  margin-left: 33%;
-  margin-right: 33%;
 }
 
-.loginText {
-  color: white;
-  font-size: 1.75rem;
-  text-shadow: 0 0 5px #333;
+#sgnUpTitle {
+  color: #f1eeeb;
+  font-size: 2.25rem;
+  text-shadow: 0 0 5px #2b302b;
 }
 
 #loginTitle {
-  color: white;
+  color: #f1eeeb;
   font-size: 2.25rem;
-  text-shadow: 0 0 5px #333;
-  /* border-bottom: 1px groove #333; */
+  text-shadow: 0 0 5px #2b302b;
 }
 
+.btn-success {
+  background-color: #2b302b;
+  color: #f1eeeb;
+  border: transparent;
+  margin: 5px;
+}
 .divider {
   position: relative;
   margin-top: 15px;
   margin-bottom: 15px;
-  height: 1.5px;
+  height: 1px;
 }
 
 .div-transparent:before {
@@ -49,11 +48,11 @@ html {
   left: 5%;
   right: 5%;
   width: 90%;
-  height: 1.5px;
+  height: 1px;
   background-image: linear-gradient(
     to right,
     transparent,
-    #303133,
+    #242d25,
     transparent
   );
 }
@@ -61,21 +60,8 @@ html {
 .btnStyle {
   display: inline-block;
   justify-content: center;
+  padding: 5px;
 }
-#signUp {
-  color: white;
-}
-
-#submitBtn {
-  color: white;
-}
-
-@media screen and (max-width: 768px) {
-  .loginForm {
-    top: 40px;
-    text-align: center;
-    width: 60%;
-    margin-left: 20%;
-    margin-right: 20%;
-  }
+.signUp {
+  color: #f1eeeb;
 }
