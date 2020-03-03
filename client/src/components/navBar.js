@@ -21,7 +21,7 @@ function NavBar() {
 
   return (
     <nav className="navbar navbar-dark bg-dark">
-      <a href="index.html" className="navbar-brand" id="nameTag">
+      <a href="/" className="navbar-brand" id="nameTag">
         The BookUp
       </a>
       <button
@@ -46,6 +46,19 @@ function NavBar() {
               Sell My Book
             </Link>
           </li>
+<<<<<<< HEAD
+          <Link
+            to="/search"
+            className={
+              window.location.pathname === "/search"
+                ? "nav-link active"
+                : "nav-link"
+            }
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            Books For Sale
+          </Link>
+=======
           <li className="nav-item">
             <Link
               to="/bookSearch"
@@ -64,6 +77,7 @@ function NavBar() {
               Sign Out
             </button>
           </li>
+>>>>>>> dev
         </ul>
       </div>
     </nav>
