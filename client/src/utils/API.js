@@ -17,6 +17,10 @@ export default {
 
     listBook: (image, title, author, publishedDate, ISBN, email) => {
         return axios.post("/api/listing/", { author, title, publishedDate, ISBN, image, email })
+    },
+
+    display: () => {
+        return axios.get("/api/listing")
     }
 };
 
