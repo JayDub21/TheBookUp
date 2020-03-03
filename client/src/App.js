@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import NavBar from "./components/navBar";
+import "./App.css";
 import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
 import Post from "./pages/Post";
@@ -10,9 +11,8 @@ function App() {
   useEffect(() => {
     axios.get("/api/hello").then(result => {
       console.log(result.data);
-    })
-  }, [])
-
+    });
+  }, []);
   return (
     <Router>
       <NavBar />
@@ -28,5 +28,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;

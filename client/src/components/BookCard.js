@@ -2,10 +2,11 @@ import React from "react";
 import API from "../utils/API"
 
 const BookCard = (props) => {
-    function handleListingSubmit(event) {
-        event.preventDefault();
-        API.listBook(props.title, props.author, props.publishedDate, props.ISBN).then(response => console.log(response.data))
-    }
+    // function handleListingSubmit(event) {
+    //     event.preventDefault();
+    //     console.log(props.image, props.title, props.author[0], props.publishedDate, props.ISBN)
+    //     API.listBook(props.author[0], props.title, props.publishedDate, props.email, props.ISBN, props.image).then(response => console.log(response.data))
+    // }
 
     return (
         <div>
@@ -17,39 +18,40 @@ const BookCard = (props) => {
 
                     <div className="col-md-8">
                         <div className="card-body">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">{props.title}</li>
-                                <li class="list-group-item">{props.author}</li>
-                                <li class="list-group-item">Published: {props.publishedDate}</li>
-                                <li class="list-group-item">ISBN: {props.ISBN}</li>
-                                <li class="list-group-item">
-                                    <div class="form-group">
-                                        <label for="exampleFormControlSelect1">Condition</label>
-                                        <select class="form-control" id="exampleFormControlSelect1">
+                            <ul className="list-group list-group-flush">
+                                <li className="list-group-item">{props.title}</li>
+                                <li className="list-group-item">{props.author}</li>
+                                <li className="list-group-item">Published: {props.publishedDate}</li>
+                                <li className="list-group-item">ISBN: {props.ISBN}</li>
+                                <li className="list-group-item">
+                                    <div className="form-group">
+                                        <label htmlFor="exampleFormControlSelect1">Condition</label>
+                                        <select className="form-control" id="exampleFormControlSelect1">
                                             <option>Good</option>
                                             <option>Like New</option>
                                             <option>Poor</option>
                                         </select>
                                     </div>
                                 </li>
-                                <li class="list-group-item">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text">$</span>
+                                <li className="list-group-item">
+                                    <div className="input-group mb-3">
+                                        <div className="input-group-prepend">
+                                            <span className="input-group-text">$</span>
                                         </div>
-                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" />
-                                        <div class="input-group-append">
-                                            <span class="input-group-text">.00</span>
+                                        <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
+                                        <div className="input-group-append">
+                                            <span className="input-group-text">.00</span>
                                         </div>
                                     </div>
                                 </li>
+                                <li className="list-group-item">atb5498@gmail.com</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <button onClick={handleListingSubmit} type="Submit">Search</button>
+            {/* <button onClick={handleListingSubmit} type="Submit">Search</button> */}
         </div>
     );
 }
