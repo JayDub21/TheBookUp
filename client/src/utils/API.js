@@ -12,6 +12,10 @@ export default {
 
     signup: (email, password) => {
         return axios.post("/api/auth/signup", { email, password });
+    },
+
+    display: () => {
+        return axios.get("/api/listing")
     }
 };
 

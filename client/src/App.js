@@ -5,6 +5,7 @@ import "./App.css";
 import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
 import Post from "./pages/Post";
+import Display from "./pages/Display";
 import axios from "axios";
 
 function App() {
@@ -24,6 +25,9 @@ function App() {
       </Route>
       <Route exact path="/post">
         <Post />
+      </Route>
+      <Route exact path="/display">
+        <Display />
       </Route>
     </Router>
   );
