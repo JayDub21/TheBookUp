@@ -14,22 +14,11 @@ export default {
         return axios.post("/api/auth/signup", { email, password });
     },
 
-
-    listBook: (image, title, author, publishedDate, ISBN, email) => {
-        return axios.post("/api/listing/", { author, title, publishedDate, ISBN, image, email })
+    listBook: (image, title, author, publishedDate, ISBN, condition, price, email) => {
+        return axios.post("/api/listing/", { image, title, author, publishedDate, ISBN, condition, price, email })
     },
 
     display: () => {
         return axios.get("/api/listing")
     }
 };
-
-// }
-
-// Save a user to database
-//     saveUser: function (userData) {
-//         return axios.post("/api/users", userData);
-//     },
-//     getUser: function () {
-//         console.log(axios.get("/api/users"));
-//     }

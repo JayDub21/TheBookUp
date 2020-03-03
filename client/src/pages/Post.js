@@ -9,7 +9,10 @@ class Post extends Component {
         super(props);
         this.state = {
             books: [],
-            searchField: ""
+            searchField: "",
+            condition: "Good",
+            price: "",
+            email: ""
         }
     }
 
@@ -18,13 +21,20 @@ class Post extends Component {
         request
             .get("https://www.googleapis.com/books/v1/volumes?q=isbn:" + this.state.searchField)
             .then((data) => {
-                console.log(data)
                 this.setState({ books: [...data.body.items] })
             })
     }
 
     handleSearch = (event) => {
         this.setState({ searchField: event.target.value })
+    }
+
+    handleInputChange = (event) => {
+        this.setState({
+            condition: event.target.value,
+            price: event.target.value,
+            email: event.target.value
+        })
     }
 
     handleListingSubmit = (event) => {
@@ -35,16 +45,18 @@ class Post extends Component {
         const author = this.state.books[0].volumeInfo.authors[0];
         const publishedDate = this.state.books[0].volumeInfo.publishedDate;
         const ISBN = this.state.books[0].volumeInfo.industryIdentifiers[0].identifier;
-        const email = "atb5498@gmail.com";
+        const condition = this.state.condition;
+        const price = this.state.price;
+        const email = this.state.email;
 
-        API.listBook(image, title, author, publishedDate, ISBN, email).then(response => console.log(response.data))
+        API.listBook(image, title, author, publishedDate, ISBN, condition, price, email).then(response => console.log(response.data))
     }
 
     render() {
         return (
             <div>
                 <BookSearch searchBook={this.searchBook} handleSearch={this.handleSearch} />
-                <BookList books={this.state.books} handleSearch={this.handleSearch} />
+                <BookList books={this.state.books} handleSearch={this.handleSearch} handleInputChange={this.handleInputChange} />
                 <button onClick={this.handleListingSubmit} type="Submit">Submit</button>
             </div>
         );

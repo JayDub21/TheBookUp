@@ -1,12 +1,6 @@
 import React from "react";
 
 const BookCard = (props) => {
-    // function handleListingSubmit(event) {
-    //     event.preventDefault();
-    //     console.log(props.image, props.title, props.author[0], props.publishedDate, props.ISBN)
-    //     API.listBook(props.author[0], props.title, props.publishedDate, props.email, props.ISBN, props.image).then(response => console.log(response.data))
-    // }
-
     return (
         <div>
             <div className="card mb-3" style={{ maxWidth: 540 }}>
@@ -25,10 +19,10 @@ const BookCard = (props) => {
                                 <li className="list-group-item">
                                     <div className="form-group">
                                         <label htmlFor="exampleFormControlSelect1">Condition</label>
-                                        <select className="form-control" id="exampleFormControlSelect1">
-                                            <option>Good</option>
-                                            <option>Like New</option>
-                                            <option>Poor</option>
+                                        <select onChange={props.handleInputChange} className="form-control" id="exampleFormControlSelect1">
+                                            <option value="Good">Good</option>
+                                            <option value="Like New">Like New</option>
+                                            <option value="Poor">Poor</option>
                                         </select>
                                     </div>
                                 </li>
@@ -37,20 +31,20 @@ const BookCard = (props) => {
                                         <div className="input-group-prepend">
                                             <span className="input-group-text">$</span>
                                         </div>
-                                        <input type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
+                                        <input onChange={props.handleInputChange} type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
                                         <div className="input-group-append">
                                             <span className="input-group-text">.00</span>
                                         </div>
                                     </div>
                                 </li>
-                                <li className="list-group-item">atb5498@gmail.com</li>
+                                <li className="list-group-item">
+                                    <input onChange={props.handleInputChange} type="text" />
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-
-            {/* <button onClick={handleListingSubmit} type="Submit">Search</button> */}
         </div>
     );
 }

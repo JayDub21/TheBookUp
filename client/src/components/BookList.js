@@ -11,8 +11,9 @@ const BookList = (props) => {
                         image={book.volumeInfo.imageLinks.thumbnail}
                         title={book.volumeInfo.title}
                         author={book.volumeInfo.authors}
-                        ISBN={book.volumeInfo.industryIdentifiers[0].identifier}
                         publishedDate={book.volumeInfo.publishedDate}
+                        ISBN={book.volumeInfo.industryIdentifiers[0].identifier}
+                        handleInputChange={props.handleInputChange}
                     />
                 })
             }
