@@ -13,7 +13,9 @@ const BookList = (props) => {
                         author={book.volumeInfo.authors}
                         publishedDate={book.volumeInfo.publishedDate}
                         ISBN={book.volumeInfo.industryIdentifiers[0].identifier}
-                        handleInputChange={props.handleInputChange}
+                        handleConditionChange={props.handleConditionChange}
+                        handlePriceChange={props.handlePriceChange}
+                        handleEmailChange={props.handleEmailChange}
                     />
                 })
             }

@@ -29,10 +29,20 @@ class Post extends Component {
         this.setState({ searchField: event.target.value })
     }
 
-    handleInputChange = (event) => {
+    handleConditionChange = (event) => {
         this.setState({
-            condition: event.target.value,
-            price: event.target.value,
+            condition: event.target.value
+        })
+    }
+
+    handlePriceChange = (event) => {
+        this.setState({
+            price: event.target.value
+        })
+    }
+
+    handleEmailChange = (event) => {
+        this.setState({
             email: event.target.value
         })
     }
@@ -56,7 +66,7 @@ class Post extends Component {
         return (
             <div>
                 <BookSearch searchBook={this.searchBook} handleSearch={this.handleSearch} />
-                <BookList books={this.state.books} handleSearch={this.handleSearch} handleInputChange={this.handleInputChange} />
+                <BookList books={this.state.books} handleSearch={this.handleSearch} handleConditionChange={this.handleCondtionChange} handlePriceChange={this.handlePriceChange} handleEmailChange={this.handleEmailChange} />
                 <button onClick={this.handleListingSubmit} type="Submit">Submit</button>
             </div>
         );

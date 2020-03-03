@@ -6,7 +6,7 @@ const BookCard = (props) => {
             <div className="card mb-3" style={{ maxWidth: 540 }}>
                 <div className="row no-gutters">
                     <div className="col-md-4">
-                        <img src={props.image} className="card-img" alt="book image" />
+                        <img src={props.image} className="card-img" alt="book" />
                     </div>
 
                     <div className="col-md-8">
@@ -19,7 +19,7 @@ const BookCard = (props) => {
                                 <li className="list-group-item">
                                     <div className="form-group">
                                         <label htmlFor="exampleFormControlSelect1">Condition</label>
-                                        <select onChange={props.handleInputChange} className="form-control" id="exampleFormControlSelect1">
+                                        <select onChange={props.handleConditionChange} className="form-control" id="exampleFormControlSelect1">
                                             <option value="Good">Good</option>
                                             <option value="Like New">Like New</option>
                                             <option value="Poor">Poor</option>
@@ -31,14 +31,14 @@ const BookCard = (props) => {
                                         <div className="input-group-prepend">
                                             <span className="input-group-text">$</span>
                                         </div>
-                                        <input onChange={props.handleInputChange} type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
+                                        <input onChange={props.handlePriceChange} type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
                                         <div className="input-group-append">
                                             <span className="input-group-text">.00</span>
                                         </div>
                                     </div>
                                 </li>
                                 <li className="list-group-item">
-                                    <input onChange={props.handleInputChange} type="text" />
+                                    <input onChange={props.handleEmailChange} type="text" />
                                 </li>
                             </ul>
                         </div>
