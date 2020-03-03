@@ -32,10 +32,6 @@ function SignUpForm() {
     // }
   }
 
-  function getStuff(event) {
-    event.preventDefault();
-    API.getUser();
-  }
 
   return (
     <div className="container">
