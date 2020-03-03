@@ -14,11 +14,10 @@ class Display extends Component {
 
     displayBook = (event) => {
         event.preventDefault();
-        let bookObj = {};
         API.display()
             .then(
                 response => {
-                    console.log(response);
+                    const bookObj = {};
                     bookObj.title = response.data[0].title;
                     bookObj.author = response.data[0].author;
                     bookObj.publishedDate = response.data[0].publishedDate;
@@ -26,25 +25,20 @@ class Display extends Component {
                     bookObj.ISBN = response.data[0].ISBN;
                     bookObj.image = response.data[0].image;
                     bookObj.price = response.data[0].price;
-                    return bookObj;
+                    this.setState({ book: bookObj });
                 }
-            )
-            .then(
-                this.handleDisplay(bookObj)
             )
     }
 
     handleDisplay = (book) => {
-        console.log(book);
         this.setState({ book: book })
     }
-
 
     render() {
         return (
             <div>
                 <BookDisplay displayBook={this.displayBook} />
-                <BookDisplayList book={this.book} />
+                <BookDisplayList book={this.state.book} />
             </div>
         );
     }
