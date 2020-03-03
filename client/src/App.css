@@ -15,24 +15,17 @@ html {
   justify-content: center;
   text-align: center;
 }
-/* .loginForm {
-  top: 40px;
-  text-align: center;
-  width: 40%;
-  margin-left: 33%;
-  margin-right: 33%;
-} */
 
 #sgnUpTitle {
   color: #f1eeeb;
   font-size: 2.25rem;
-  text-shadow: 0 0 5px #242d25;
+  text-shadow: 0 0 5px #2b302b;
 }
 
 #loginTitle {
   color: #f1eeeb;
   font-size: 2.25rem;
-  text-shadow: 0 0 5px #242d25;
+  text-shadow: 0 0 5px #2b302b;
 }
 
 .btn-success {
