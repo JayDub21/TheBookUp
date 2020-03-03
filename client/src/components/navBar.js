@@ -46,19 +46,6 @@ function NavBar() {
               Sell My Book
             </Link>
           </li>
-<<<<<<< HEAD
-          <Link
-            to="/search"
-            className={
-              window.location.pathname === "/search"
-                ? "nav-link active"
-                : "nav-link"
-            }
-            style={{ textDecoration: "none", color: "white" }}
-          >
-            Books For Sale
-          </Link>
-=======
           <li className="nav-item">
             <Link
               to="/bookSearch"
@@ -77,7 +64,6 @@ function NavBar() {
               Sign Out
             </button>
           </li>
->>>>>>> dev
         </ul>
       </div>
     </nav>
