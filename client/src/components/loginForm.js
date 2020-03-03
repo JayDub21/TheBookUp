@@ -78,11 +78,10 @@ function LoginForm() {
               placeholder="Password"
             />
           </div>
-          <br />
           <div className="btnStyle">
             <div className="btn btn-md btn-success">
-              <Link to="/signup" className="/signup">
-                <div id="signUp">Sign Up</div>
+              <Link to="/signup">
+                <div className="signUp">Sign Up</div>
               </Link>
             </div>
 
@@ -91,7 +90,6 @@ function LoginForm() {
             </FormBtn>
           </div>
         </form>
-        <br />
       </div>
       {/* Testing out a small a dashboard div to appear when use signs in */}
       <div>{renderPrivateSection()}</div>
