@@ -2,20 +2,23 @@ import React from "react";
 import BookDisplayCard from "./BookDisplayCard"
 
 const BookDisplayList = (props) => {
-    console.log(Object.entries(props))
-    console.log(props.book);
+    console.log(props.books);
     return (
         <div className="list">
-            <BookDisplayCard
-                key={1}
-                image={props.book.image}
-                title={props.book.title}
-                author={props.book.author}
-                publishedDate={props.book.publishedDate}
-                email={props.book.email}
-                ISBN={props.book.ISBN}
-                price={props.book.price}
-            />
+            {
+                props.books.map((book, i) => {
+                    return <BookDisplayCard
+                        key={i}
+                        image={book.image}
+                        title={book.title}
+                        author={book.author}
+                        ISBN={book.ISBN}
+                        publishedDate={book.publishedDate}
+                        email={book.email}
+                        price={book.price}
+                    />
+                })
+            }
         </div>
     );
 }

@@ -8,7 +8,7 @@ class Display extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            book: {}
+            books: []
         }
     }
 
@@ -17,28 +17,32 @@ class Display extends Component {
         API.display()
             .then(
                 response => {
-                    const bookObj = {};
-                    bookObj.title = response.data[0].title;
-                    bookObj.author = response.data[0].author;
-                    bookObj.publishedDate = response.data[0].publishedDate;
-                    bookObj.email = response.data[0].email;
-                    bookObj.ISBN = response.data[0].ISBN;
-                    bookObj.image = response.data[0].image;
-                    bookObj.price = response.data[0].price;
-                    this.setState({ book: bookObj });
+                    const books = [];
+                    console.log(response.data.length);
+                    for (var i = 0; i < response.data.length; i++) {
+                        console.log(i);
+                        let bookObj = {
+                            title: response.data[i].title,
+                            author: response.data[i].author,
+                            image: response.data[i].image,
+                            publishedDate: response.data[i].publishedDate,
+                            ISBN: response.data[i].ISBN,
+                            email: response.data[i].email,
+                            price: response.data[i].price
+                        }
+                        books.push(bookObj);
+                    }
+                    this.setState({ books: books });
+                    console.log(this.state.books);
                 }
             )
-    }
-
-    handleDisplay = (book) => {
-        this.setState({ book: book })
     }
 
     render() {
         return (
             <div>
                 <BookDisplay displayBook={this.displayBook} />
-                <BookDisplayList book={this.state.book} />
+                <BookDisplayList books={this.state.books} />
             </div>
         );
     }
