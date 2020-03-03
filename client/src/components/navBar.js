@@ -21,7 +21,7 @@ function NavBar() {
 
   return (
     <nav className="navbar navbar-dark bg-dark">
-      <a href="index.html" className="navbar-brand" id="nameTag">
+      <a href="/" className="navbar-brand" id="nameTag">
         The BookUp
       </a>
       <button
@@ -48,9 +48,9 @@ function NavBar() {
           </li>
           <li className="nav-item">
             <Link
-              to="/bookSearch"
+              to="/display"
               className={
-                window.location.pathname === "/bookSearch"
+                window.location.pathname === "/display"
                   ? "nav-link active"
                   : "nav-link"
               }
