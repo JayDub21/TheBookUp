@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import API from "../utils/API";
 
 function NavBar() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  function handleLogoutSubmit(event) {
+    event.preventDefault();
+    API.logout()
+      .then(response => {
+        if (isLoggedIn) {
+          setIsLoggedIn(false);
+          window.location.replace("https://localhost:3000/");
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
   return (
     <nav className="navbar navbar-dark bg-dark">
       <a href="/" className="navbar-brand" id="nameTag">
@@ -29,6 +46,7 @@ function NavBar() {
               Sell My Book
             </Link>
           </li>
+<<<<<<< HEAD
           <Link
             to="/search"
             className={
@@ -40,6 +58,26 @@ function NavBar() {
           >
             Books For Sale
           </Link>
+=======
+          <li className="nav-item">
+            <Link
+              to="/bookSearch"
+              className={
+                window.location.pathname === "/bookSearch"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              Books For Sale
+            </Link>
+          </li>
+          <li className="nav-item">
+            <button type="submit" onClick={handleLogoutSubmit}>
+              Sign Out
+            </button>
+          </li>
+>>>>>>> dev
         </ul>
       </div>
     </nav>
