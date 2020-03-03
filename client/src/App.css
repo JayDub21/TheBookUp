@@ -1,38 +1,67 @@
-.App {
+body,
+html {
+  height: 100%;
+  margin: 0px auto;
+  padding: 0px auto;
+  background: url("./img/annie-spratt.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.container {
+  margin-top: 3%;
+  justify-content: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#sgnUpTitle {
+  color: #f1eeeb;
+  font-size: 2.25rem;
+  text-shadow: 0 0 5px #2b302b;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#loginTitle {
+  color: #f1eeeb;
+  font-size: 2.25rem;
+  text-shadow: 0 0 5px #2b302b;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.btn-success {
+  background-color: #2b302b;
+  color: #f1eeeb;
+  border: transparent;
+  margin: 5px;
+}
+.divider {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  height: 1px;
+}
+
+.div-transparent:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    #242d25,
+    transparent
+  );
+}
+
+.btnStyle {
+  display: inline-block;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 5px;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.signUp {
+  color: #f1eeeb;
 }
