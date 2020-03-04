@@ -31,14 +31,14 @@ const BookCard = (props) => {
                                         <div className="input-group-prepend">
                                             <span className="input-group-text">$</span>
                                         </div>
-                                        <input onChange={props.handlePriceChange} type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
+                                        <input id="price-input" onChange={props.handlePriceChange} type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
                                         <div className="input-group-append">
                                             <span className="input-group-text">.00</span>
                                         </div>
                                     </div>
                                 </li>
                                 <li className="list-group-item">
-                                    <input onChange={props.handleEmailChange} type="text" />
+                                    <input id="email-input" onChange={props.handleEmailChange} type="text" placeholder="Email" />
                                 </li>
 
                                 <button onClick={props.handleListingSubmit} type="Submit">Submit</button>

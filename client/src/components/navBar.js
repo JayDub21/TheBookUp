@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import API from "../utils/API";
+import "./navBar.css";
 
 function NavBar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -20,9 +21,9 @@ function NavBar() {
   }
 
   return (
-    <nav className="navbar navbar-dark bg-dark">
+    <nav className="navbar navbar-dark">
       <a href="/" className="navbar-brand" id="nameTag">
-        The BookUp
+        the BookUp
       </a>
       <button
         className="navbar-toggler"
@@ -41,9 +42,8 @@ function NavBar() {
                   ? "nav-link active"
                   : "nav-link"
               }
-              style={{ textDecoration: "none", color: "white" }}
             >
-              Sell My Book
+              Sell Your Book
             </Link>
           </li>
           <li className="nav-item">
@@ -54,13 +54,12 @@ function NavBar() {
                   ? "nav-link active"
                   : "nav-link"
               }
-              style={{ textDecoration: "none", color: "white" }}
             >
               Books For Sale
             </Link>
           </li>
           <li className="nav-item">
-            <button type="submit" onClick={handleLogoutSubmit}>
+            <button id="sign-out" type="submit" onClick={handleLogoutSubmit}>
               Sign Out
             </button>
           </li>

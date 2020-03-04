@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import BookSearch from "../components/BookSearch";
 import request from "superagent";
-import BookList from "../components/BookList"
-import API from "../utils/API"
+import BookList from "../components/BookList";
+import API from "../utils/API";
+import "./Post.css";
 
 class Post extends Component {
     constructor(props) {
@@ -61,8 +62,15 @@ class Post extends Component {
 
         API.listBook(image, title, author, publishedDate, ISBN, condition, price, email).then(response => console.log(response.data));
 
-        document.querySelector(".list").innerHTML = "";
-        document.querySelector("#isbn-input").value = "";
+        const priceInput = document.querySelector("#price-input");
+        const emailInput = document.querySelector("#email-input");
+
+        if (priceInput.value === "" || emailInput.value === "") {
+            alert("Please provide a price and valid email address.")
+        } else {
+            document.querySelector(".list").innerHTML = "";
+            document.querySelector("#isbn-input").value = "";
+        }
     }
 
     render() {

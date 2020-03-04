@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import BookDisplayList from "../components/BookDisplayList";
 import API from "../utils/API";
 import BookDisplay from "../components/BookDisplay";
+import NavBar from "../components/navBar";
 
 class Display extends Component {
     constructor(props) {
@@ -41,6 +42,7 @@ class Display extends Component {
     render() {
         return (
             <div>
+                <NavBar />
                 <BookDisplay displayBook={this.displayBook} />
                 <BookDisplayList books={this.state.books} />
             </div>
