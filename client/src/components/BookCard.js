@@ -40,6 +40,8 @@ const BookCard = (props) => {
                                 <li className="list-group-item">
                                     <input onChange={props.handleEmailChange} type="text" />
                                 </li>
+
+                                <button onClick={props.handleListingSubmit} type="Submit">Submit</button>
                             </ul>
                         </div>
                     </div>

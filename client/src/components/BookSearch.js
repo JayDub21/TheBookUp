@@ -4,7 +4,7 @@ const BookSearch = (props) => {
     return (
         <div className="book-search">
             <form onSubmit={props.searchBook} action="">
-                <input onChange={props.handleSearch} type="text" />
+                <input onChange={props.handleSearch} id="isbn-input" type="text" />
                 <button type="Submit">Search</button>
             </form>
         </div>

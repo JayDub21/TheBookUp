@@ -59,15 +59,17 @@ class Post extends Component {
         const price = this.state.price;
         const email = this.state.email;
 
-        API.listBook(image, title, author, publishedDate, ISBN, condition, price, email).then(response => console.log(response.data))
+        API.listBook(image, title, author, publishedDate, ISBN, condition, price, email).then(response => console.log(response.data));
+
+        document.querySelector(".list").innerHTML = "";
+        document.querySelector("#isbn-input").value = "";
     }
 
     render() {
         return (
             <div>
                 <BookSearch searchBook={this.searchBook} handleSearch={this.handleSearch} />
-                <BookList books={this.state.books} handleSearch={this.handleSearch} handleConditionChange={this.handleCondtionChange} handlePriceChange={this.handlePriceChange} handleEmailChange={this.handleEmailChange} />
-                <button onClick={this.handleListingSubmit} type="Submit">Submit</button>
+                <BookList books={this.state.books} handleSearch={this.handleSearch} handleConditionChange={this.handleCondtionChange} handlePriceChange={this.handlePriceChange} handleEmailChange={this.handleEmailChange} handleListingSubmit={this.handleListingSubmit} />
             </div>
         );
     }

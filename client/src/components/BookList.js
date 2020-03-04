@@ -16,6 +16,7 @@ const BookList = (props) => {
                         handleConditionChange={props.handleConditionChange}
                         handlePriceChange={props.handlePriceChange}
                         handleEmailChange={props.handleEmailChange}
+                        handleListingSubmit={props.handleListingSubmit}
                     />
                 })
             }
