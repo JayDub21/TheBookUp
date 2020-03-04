@@ -118,7 +118,6 @@ class Display extends Component {
 
     handleSearch = (event) => {
         this.setState({ searchField: event.target.value })
-        // console.log(this.state.searchField)
     }
 
 
