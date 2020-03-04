@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Input, FormBtn } from "./Form";
 import API from "../utils/API";
 
-import axios from "axios";
+// import axios from "axios";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -18,9 +18,11 @@ function LoginForm() {
     event.preventDefault();
     API.login(email, password).then(response => {
       setIsLoggedIn(true);
-      axios.get("/api/user/dashboard").then(response => {
-        setPrivateInfo({ secret: response.data });
-      });
+      window.location.pathname = "/post"
+      // axios.get("/api/user/dashboard")
+      // .then(response => {
+      //   setPrivateInfo({ secret: response.data });
+      // });
     });
     // axios.post("/api/auth/login", { email, password }).then(response => {
     //     axios.get("/api/user/dashboard").then(response => {
@@ -44,7 +46,7 @@ function LoginForm() {
     if (isLoggedIn) {
       return (
         <div>
-          <h1>{privateInfo.secret}</h1>
+          {privateInfo.secret}
         </div>
       );
     }
