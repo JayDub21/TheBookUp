@@ -27,7 +27,6 @@ app.use(session(
         secret: process.env.SESSION_SECRET, 
         resave: true, 
         saveUninitialized: true
-
     }))
 //Using passport to check user authentication
 app.use(passport.initialize());

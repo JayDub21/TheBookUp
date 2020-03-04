@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import API from "../utils/API";
 
 function NavBar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   function handleLogoutSubmit(event) {
     event.preventDefault();
@@ -11,7 +11,7 @@ function NavBar() {
       .then(response => {
         if (isLoggedIn) {
           setIsLoggedIn(false);
-          window.location.replace("https://localhost:3000/");
+          window.location.pathname = "/";
         }
       })
       .catch(err => {
