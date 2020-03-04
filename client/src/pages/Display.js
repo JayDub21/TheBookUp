@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import BookSearch from "../components/BookSearch";
 import BookDisplayList from "../components/BookDisplayList";
 import API from "../utils/API";
-import BookDisplay from "../components/BookDisplay";
+// import BookDisplay from "../components/BookDisplay";
 
 class Display extends Component {
     constructor(props) {
@@ -12,8 +12,7 @@ class Display extends Component {
         }
     }
 
-    displayBook = (event) => {
-        event.preventDefault();
+    componentDidMount() {
         API.display()
             .then(
                 response => {
@@ -38,10 +37,12 @@ class Display extends Component {
             )
     }
 
+
+
+
     render() {
         return (
             <div>
-                <BookDisplay displayBook={this.displayBook} />
                 <BookDisplayList books={this.state.books} />
             </div>
         );
