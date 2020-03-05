@@ -118,3 +118,7 @@ h1 {
 #submit-button:hover {
   background-color: #302C23;
 }
+
+#isbn-searchbar {
+  margin-bottom: 50px;
+}

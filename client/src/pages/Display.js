@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import BookSearch from "../components/BookSearch";
 import BookDisplayList from "../components/BookDisplayList";
 import API from "../utils/API";
 import NavBar from "../components/navBar";
@@ -22,13 +21,15 @@ class Display extends Component {
                     const books = [];
                     for (var i = 0; i < response.data.length; i++) {
                         let bookObj = {
+                            id: response.data[i]._id,
                             title: response.data[i].title,
                             author: response.data[i].author,
                             image: response.data[i].image,
                             publishedDate: response.data[i].publishedDate,
                             ISBN: response.data[i].ISBN,
                             email: response.data[i].email,
-                            price: response.data[i].price
+                            price: response.data[i].price,
+                            condition: response.data[i].condition
                         }
                         books.push(bookObj);
                     }
@@ -46,13 +47,15 @@ class Display extends Component {
                 for (var i = 0; i < response.data.length; i++) {
                     if ((response.data[i].author).toLowerCase().trim() === (this.state.searchField).toLowerCase().trim()) {
                         let bookObj = {
+                            id: response.data[i]._id,
                             title: response.data[i].title,
                             author: response.data[i].author,
                             image: response.data[i].image,
                             publishedDate: response.data[i].publishedDate,
                             ISBN: response.data[i].ISBN,
                             email: response.data[i].email,
-                            price: response.data[i].price
+                            price: response.data[i].price,
+                            condition: response.data[i].condition
                         }
                         books.push(bookObj);
                     } else {
@@ -72,13 +75,15 @@ class Display extends Component {
                 for (var i = 0; i < response.data.length; i++) {
                     if ((response.data[i].title).toLowerCase().trim() === (this.state.searchField).toLowerCase().trim()) {
                         let bookObj = {
+                            id: response.data[i]._id,
                             title: response.data[i].title,
                             author: response.data[i].author,
                             image: response.data[i].image,
                             publishedDate: response.data[i].publishedDate,
                             ISBN: response.data[i].ISBN,
                             email: response.data[i].email,
-                            price: response.data[i].price
+                            price: response.data[i].price,
+                            condition: response.data[i].condition
                         }
                         books.push(bookObj);
                     } else {
@@ -100,13 +105,15 @@ class Display extends Component {
                     console.log(response.data[i].ISBN);
                     if (response.data[i].ISBN == this.state.searchField) {
                         let bookObj = {
+                            id: response.data[i]._id,
                             title: response.data[i].title,
                             author: response.data[i].author,
                             image: response.data[i].image,
                             publishedDate: response.data[i].publishedDate,
                             ISBN: response.data[i].ISBN,
                             email: response.data[i].email,
-                            price: response.data[i].price
+                            price: response.data[i].price,
+                            condition: response.data[i].condition
                         }
                         console.log("ISBN found");
                         books.push(bookObj);
@@ -128,6 +135,14 @@ class Display extends Component {
     render() {
         return (
             <div>
+                <div id="post-jumbotron" className="jumbotron jumbotron-fluid">
+                    <NavBar />
+                    <div className="container">
+                        <h1 className="display-4">Books For Sale</h1>
+                        <p className="lead">Search for books by title, author, or ISBN.</p>
+                    </div>
+                </div>
+
                 <BookSearchBar
                     searchISBN={this.searchISBN}
                     searchAuthor={this.searchAuthor}
