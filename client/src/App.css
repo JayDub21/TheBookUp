@@ -1,67 +1,120 @@
-/* body,
-html {
-  height: 100%;
-  margin: 0px auto;
-  padding: 0px auto;
-  background: url("./img/annie-spratt.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+body {
+  font-family: 'Roboto', sans-serif;
 }
 
-.container {
-  margin-top: 3%;
-  justify-content: center;
+.jumbotron {
+  height: 350px;
+  background-image: url("./img/books-header.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#signup-jumbotron {
+  padding-top: 0;
+  height: 350px;
+}
+
+#form-button {
+  background-color: #6A665A;
+  color: white;
+  border-color: #6A665A;
+  font-weight: bold;
+}
+
+#form-button:hover {
+  background-color: #302C23;
+}
+
+.login-signup {
+  color: #6A665A;
+}
+
+.login-signup:hover {
+  color: #302C23;
+}
+
+#post-jumbotron {
+  padding-top: 0;
+}
+
+h1 {
   text-align: center;
+  font-family: 'Abril Fatface', serif;
+  color: white;
+  margin-top: 25px;
 }
 
-#sgnUpTitle {
-  color: #f1eeeb;
-  font-size: 2.25rem;
-  text-shadow: 0 0 5px #2b302b;
+.lead {
+  text-align: center;
+  margin-bottom: 50px;
+  color: white;
 }
 
-#loginTitle {
-  color: #f1eeeb;
-  font-size: 2.25rem;
-  text-shadow: 0 0 5px #2b302b;
+#search-button {
+  background-color: #6A665A;
+  color: white;
+  border-color: #6A665A;
+  font-weight: bold;
 }
 
-.btn-success {
-  background-color: #2b302b;
-  color: #f1eeeb;
-  border: transparent;
-  margin: 5px;
-}
-.divider {
-  position: relative;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  height: 1px;
+#search-button:hover {
+  background-color: #302C23;
 }
 
-.div-transparent:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 5%;
-  right: 5%;
-  width: 90%;
-  height: 1px;
-  background-image: linear-gradient(
-    to right,
-    transparent,
-    #242d25,
-    transparent
-  );
+.book-search {
+  margin-bottom: 50px;
 }
 
-.btnStyle {
-  display: inline-block;
-  justify-content: center;
-  padding: 5px;
+.card {
+  border: none;
+  border-radius: 0;
 }
-.signUp {
-  color: #f1eeeb;
-} */
+
+.card-body {
+  padding: 0;
+}
+
+#card-title {
+  font-weight: bold;
+}
+
+.card-img {
+  border-radius: 0;
+  height: 100%;
+  width: auto;
+}
+
+.user-input {
+  padding-top: .4rem;
+  padding-bottom: .4rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#inputGroupSelect01 {
+  padding-left: 1.25rem;
+  border: none;
+}
+
+#price-input {
+  padding-left: 1.25rem;
+  border: none;
+}
+
+#contact-input {
+  padding-left: 1.25rem;
+  border: none;
+}
+
+#submit-button {
+  background-color: #6A665A;
+  color: white;
+  border-color: #6A665A;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+#submit-button:hover {
+  background-color: #302C23;
+}

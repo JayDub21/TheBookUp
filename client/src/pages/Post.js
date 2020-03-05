@@ -3,7 +3,7 @@ import BookSearch from "../components/BookSearch";
 import request from "superagent";
 import BookList from "../components/BookList";
 import API from "../utils/API";
-import "./Post.css";
+import "../App.css";
 
 class Post extends Component {
     constructor(props) {

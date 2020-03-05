@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -8,6 +8,11 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+#signup-jumbotron {
+    padding-top: 0;
+    height: 350px;
 }
 
 #form-button {
@@ -28,12 +33,6 @@ body {
 .login-signup:hover {
     color: #302C23;
 }
-
-#signup-jumbotron {
-    padding-top: 0;
-}
-
-/* Post */
 
 #post-jumbotron {
     padding-top: 0;
@@ -118,4 +117,4 @@ h1 {
 
 #submit-button:hover {
     background-color: #302C23;
-}
+} */

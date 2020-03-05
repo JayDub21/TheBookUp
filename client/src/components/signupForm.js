@@ -77,7 +77,7 @@ function SignUpForm() {
           </FormBtn>
         <div className="btn btn-md">
           <Link to="/">
-            <div className="login-signup">Login</div>
+            <div className="login-signup">Home</div>
           </Link>
         </div>
       </form>
