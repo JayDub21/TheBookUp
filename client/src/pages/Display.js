@@ -123,7 +123,14 @@ class Display extends Component {
     render() {
         return (
             <div>
-                <NavBar />
+                <div id="post-jumbotron" className="jumbotron jumbotron-fluid">
+                    <NavBar />
+                    <div className="container">
+                        <h1 className="display-4">Books For Sale</h1>
+                        <p className="lead">Search for books by title, author, or ISBN.</p>
+                    </div>
+                </div>
+
                 <BookSearchBar
                     searchISBN={this.searchISBN}
                     searchAuthor={this.searchAuthor}
