@@ -1,13 +1,24 @@
 const router = require("express").Router();
 const passport = require("../../config/passport");
-// const db = require("../../models")
+const db = require("../../models")
 const userController = require("../../controllers/userController")
 
-//Sign up route =======
-// router.post("/signup", function (req, res) {
-//     db.User.create(req.body).then(dbUser => {
-//         res.json(dbUser);
-//     }).catch(err => console.log(err));
+// function setSession(req, user) {
+//     req.session.user = user
+// }
+
+//Sign up route ======= moved to a contoller
+// router.post("/signup", async (req, res) => {
+//     db.User.create(req.body)
+//         .then(dbUser => {res.json(dbUser)})
+//         try {
+//             await user.save()
+//         } catch (err) {
+//             return res.json(err)
+//         }
+//         setSession(req, user)
+//         res.redirect("/login")
+        // .catch(err => console.log(err));
 // })
 
 //Sign up with controller====================

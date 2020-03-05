@@ -9,6 +9,7 @@ const passport = require("./config/passport");
 const isAuthenticated = require("./middleware/isAuthenticated")
 const routes = require("./routes");
 const authRoutes = require("./routes/api/authRoutes");
+// const connectStore = require("connect-mongo");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -20,7 +21,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //sessions
-app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }))
+app.use(session(
+    { 
+        name: process.env.SESSION_NAME, 
+        secret: process.env.SESSION_SECRET, 
+        resave: true, 
+        saveUninitialized: true
+    }))
 //Using passport to check user authentication
 app.use(passport.initialize());
 app.use(passport.session());

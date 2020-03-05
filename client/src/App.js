@@ -14,6 +14,7 @@ function App() {
       console.log(result.data);
     });
   }, []);
+
   return (
     <Router>
       {/* <NavBar /> */}
