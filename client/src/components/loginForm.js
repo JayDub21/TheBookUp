@@ -53,8 +53,6 @@ function LoginForm() {
   return (
     <div>
       <div className="container">
-        <h2 id="loginTitle">Login</h2>
-        <div className="divider div-transparent div-arrow-down"></div>
         <form className="login">
           <div className="form-group">
             <Input
@@ -78,17 +76,17 @@ function LoginForm() {
               placeholder="Password"
             />
           </div>
-          <div className="btnStyle">
-            <div className="btn btn-md btn-success">
-              <Link to="/signup">
-                <div className="signUp">Sign Up</div>
-              </Link>
-            </div>
 
-            <FormBtn type="submit" onClick={handleLoginSubmit}>
-              Login
+          <FormBtn type="submit" onClick={handleLoginSubmit}>
+            Login
             </FormBtn>
+
+          <div className="btn btn-md">
+            <Link to="/signup">
+              <div className="sign-up">Sign Up</div>
+            </Link>
           </div>
+
         </form>
       </div>
       {/* Testing out a small a dashboard div to appear when use signs in */}

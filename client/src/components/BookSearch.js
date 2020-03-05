@@ -4,7 +4,7 @@ import NavBar from "../components/navBar";
 const BookSearch = (props) => {
     return (
         <div>
-            <div className="jumbotron jumbotron-fluid">
+            <div id="post-jumbotron" className="jumbotron jumbotron-fluid">
                 <NavBar />
                 <div className="container">
                     <h1 className="display-4">Sell Your Book</h1>

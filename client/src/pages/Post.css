@@ -3,12 +3,36 @@ body {
 }
 
 .jumbotron {
-    padding-top: 0;
-    height: 400px;
+    height: 350px;
     background-image: url("../img/books-header.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+#login-button {
+    background-color: #6A665A;
+    color: white;
+    border-color: #6A665A;
+    font-weight: bold;
+}
+
+#login-button:hover {
+    background-color: #302C23;
+}
+
+.sign-up {
+    color: #6A665A;
+}
+
+.sign-up:hover {
+    color: #302C23;
+}
+
+/* Post */
+
+#post-jumbotron {
+    padding-top: 0;
 }
 
 h1 {
@@ -75,7 +99,7 @@ h1 {
     border: none;
 }
 
-#email-input {
+#contact-input {
     padding-left: 1.25rem;
     border: none;
 }
@@ -85,8 +109,7 @@ h1 {
     color: white;
     border-color: #6A665A;
     font-weight: bold;
-    border-top-left-radius: .25rem;
-    border-bottom-left-radius: .25rem;
+    margin-bottom: 50px;
 }
 
 #submit-button:hover {

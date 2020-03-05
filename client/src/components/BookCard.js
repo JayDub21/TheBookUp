@@ -27,7 +27,7 @@ const BookCard = (props) => {
                                     <input id="price-input" onChange={props.handlePriceChange} placeholder="Enter Price" type="text" className="form-control" aria-label="Amount (to the nearest dollar)" />
                                 </li>
                                 <li className="user-input list-group-item">
-                                    <input id="email-input" onChange={props.handleEmailChange} type="text" className="form-control" placeholder="Enter Email" aria-label="Recipient's username" aria-describedby="button-addon2" />
+                                    <input id="contact-input" onChange={props.handleEmailChange} type="text" className="form-control" placeholder="Enter Email" aria-label="Recipient's username" aria-describedby="button-addon2" />
                                 </li>
                             </ul>
                         </div>
