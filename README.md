@@ -2,7 +2,13 @@
 
 ### Project 3 - South of the Colorado
 
+#### [View The BookUp Here!](https://the-bookup.herokuapp.com/)
+
 **_Justin Wofford, Luke Duquette, Christopher Garcia, Henry Hawm_**
+
+#### Screenshots:
+
+![Log In](/client/src/img/logIn.png)
 
 ## The problem
 
