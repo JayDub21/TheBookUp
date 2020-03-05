@@ -4,11 +4,19 @@
 
 #### [View The BookUp Here!](https://the-bookup.herokuapp.com/)
 
-**_Justin Wofford, Luke Duquette, Christopher Garcia, Henry Hawm_**
+**_Justin Wofford, Harrison Thomas, Leo Lopez, Andy Bickford_**
 
-#### Screenshots:
+#### Log In:
 
 ![Log In](/client/src/img/logIn.png)
+
+#### Book Post:
+
+![Book Post](/client/src/img/bookPost.png)
+
+#### Book Search:
+
+![Book Search](/client/src/img/bookSearch.png)
 
 ## The problem
 
