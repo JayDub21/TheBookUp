@@ -10,23 +10,27 @@ body {
     background-position: center;
 }
 
-#login-button {
+#form-button {
     background-color: #6A665A;
     color: white;
     border-color: #6A665A;
     font-weight: bold;
 }
 
-#login-button:hover {
+#form-button:hover {
     background-color: #302C23;
 }
 
-.sign-up {
+.login-signup {
     color: #6A665A;
 }
 
-.sign-up:hover {
+.login-signup:hover {
     color: #302C23;
+}
+
+#signup-jumbotron {
+    padding-top: 0;
 }
 
 /* Post */

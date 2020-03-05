@@ -14,9 +14,7 @@ function Login() {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-6">
-            <div className="loginForm">
-              <LoginForm />
-            </div>
+            <LoginForm />
           </div>
         </div>
       </div>

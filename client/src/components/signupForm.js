@@ -35,8 +35,6 @@ function SignUpForm() {
 
   return (
     <div className="container">
-      <h2 id="sgnUpTitle">Sign Up</h2>
-      <div className="divider div-transparent div-arrow-down"></div>
       <form className="signup">
         <div className="form-group">
           <Input
@@ -74,15 +72,13 @@ function SignUpForm() {
           ></span>
           <span className="sr-only">Error:</span> <span className="msg"></span>
         </div>
-        <div className="btnStyle">
-          <div className="btn btn-md btn-success">
-            <Link to="/">
-              <div className="signUp">Log In</div>
-            </Link>
-          </div>
-          <FormBtn type="submit" onClick={handleFormSubmit}>
-            Sign Up
+        <FormBtn type="submit" onClick={handleFormSubmit}>
+          Sign Up
           </FormBtn>
+        <div className="btn btn-md">
+          <Link to="/">
+            <div className="login-signup">Login</div>
+          </Link>
         </div>
       </form>
     </div>

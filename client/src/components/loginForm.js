@@ -83,7 +83,7 @@ function LoginForm() {
 
           <div className="btn btn-md">
             <Link to="/signup">
-              <div className="sign-up">Sign Up</div>
+              <div className="login-signup">Sign Up</div>
             </Link>
           </div>
 
