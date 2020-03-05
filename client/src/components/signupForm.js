@@ -20,7 +20,7 @@ function SignUpForm() {
   //When the form is submitted, use the API.saveUser method to save the user to the database
   function handleFormSubmit(event) {
     event.preventDefault();
-    API.signup(email, password).then(response => console.log(response.data));
+    API.signup(email, password).then(response => { window.location.pathname = "/" });
     // axios.post("/api/auth/signup", {email, password}).then(response => console.log(response.data));
 
     // if (formObject.email && formObject.password) {
@@ -77,7 +77,7 @@ function SignUpForm() {
           </FormBtn>
         <div className="btn btn-md">
           <Link to="/">
-            <div className="login-signup">Home</div>
+            <div className="login-signup">Login</div>
           </Link>
         </div>
       </form>
