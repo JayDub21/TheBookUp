@@ -60,15 +60,14 @@ class Post extends Component {
         const price = this.state.price;
         const email = this.state.email;
 
-        API.listBook(image, title, author, ISBN, condition, price, email).then(response => console.log(response.data));
-
         const priceInput = document.querySelector("#price-input");
-        const emailInput = document.querySelector("#email-input");
+        const emailInput = document.querySelector("#contact-input");
         const conditionInput = document.querySelector("#inputGroupSelect01");
 
         if (priceInput.value === "" || emailInput.value === "" || conditionInput.value === "") {
             alert("Please provide the book condition, price, and a valid email address.")
         } else {
+            API.listBook(image, title, author, ISBN, condition, price, email).then(response => console.log(response.data));
             this.setState({ books: [] })
             document.querySelector("#isbn-input").value = "";
         }
