@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import NavBar from "./components/navBar";
+// import NavBar from "./components/navBar";
 import "./App.css";
 import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <Router>
-      <NavBar />
+      {/* <NavBar /> */}
       <Route exact path="/">
         <Login />
       </Route>

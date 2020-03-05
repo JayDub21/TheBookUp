@@ -2,6 +2,8 @@ import React, { Component } from "react";
 // import BookSearch from "../components/BookSearch";
 import BookDisplayList from "../components/BookDisplayList";
 import API from "../utils/API";
+import BookDisplay from "../components/BookDisplay";
+import NavBar from "../components/navBar";
 import BookSearchBar from "../components/BookSearchBar";
 
 class Display extends Component {
@@ -110,7 +112,6 @@ class Display extends Component {
                     } else {
                         console.log("No ISBN found");
                     }
-
                 }
                 this.setState({ books: books });
             })
@@ -120,10 +121,12 @@ class Display extends Component {
         this.setState({ searchField: event.target.value })
     }
 
-
     render() {
         return (
             <div>
+                <NavBar />
+                <BookDisplay displayBook={this.displayBook} />
+                <BookDisplayList books={this.state.books} />
                 <BookSearchBar
                     searchISBN={this.searchISBN}
                     searchAuthor={this.searchAuthor}
