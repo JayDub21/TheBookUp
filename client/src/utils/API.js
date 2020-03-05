@@ -20,5 +20,9 @@ export default {
 
     display: () => {
         return axios.get("/api/listing")
+    },
+
+    deleteBook: (id) => {
+        return axios.delete("/api/listing/" + id);
     }
 };
