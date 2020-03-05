@@ -1,0 +1,120 @@
+/* body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.jumbotron {
+    height: 350px;
+    background-image: url("../img/books-header.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#signup-jumbotron {
+    padding-top: 0;
+    height: 350px;
+}
+
+#form-button {
+    background-color: #6A665A;
+    color: white;
+    border-color: #6A665A;
+    font-weight: bold;
+}
+
+#form-button:hover {
+    background-color: #302C23;
+}
+
+.login-signup {
+    color: #6A665A;
+}
+
+.login-signup:hover {
+    color: #302C23;
+}
+
+#post-jumbotron {
+    padding-top: 0;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Abril Fatface', serif;
+    color: white;
+    margin-top: 25px;
+}
+
+.lead {
+    text-align: center;
+    margin-bottom: 50px;
+    color: white;
+}
+
+#search-button {
+    background-color: #6A665A;
+    color: white;
+    border-color: #6A665A;
+    font-weight: bold;
+}
+
+#search-button:hover {
+    background-color: #302C23;
+}
+
+.book-search {
+    margin-bottom: 50px;
+}
+
+.card {
+    border: none;
+    border-radius: 0;
+}
+
+.card-body {
+    padding: 0;
+}
+
+#card-title {
+    font-weight: bold;
+}
+
+.card-img {
+    border-radius: 0;
+    height: 100%;
+    width: auto;
+}
+
+.user-input {
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#inputGroupSelect01 {
+    padding-left: 1.25rem;
+    border: none;
+}
+
+#price-input {
+    padding-left: 1.25rem;
+    border: none;
+}
+
+#contact-input {
+    padding-left: 1.25rem;
+    border: none;
+}
+
+#submit-button {
+    background-color: #6A665A;
+    color: white;
+    border-color: #6A665A;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+#submit-button:hover {
+    background-color: #302C23;
+} */
