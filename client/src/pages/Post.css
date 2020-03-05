@@ -24,11 +24,6 @@ h1 {
     color: white;
 }
 
-#isbn-input:focus {
-    box-shadow: 0 0 0 0.2rem #adb1b4;
-    border: none;
-}
-
 #search-button {
     background-color: #6A665A;
     color: white;
@@ -36,24 +31,64 @@ h1 {
     font-weight: bold;
 }
 
-#search-button:focus {
-    box-shadow: 0 0 0 0.2rem #adb1b4;
-}
-
 #search-button:hover {
     background-color: #302C23;
 }
 
+.book-search {
+    margin-bottom: 50px;
+}
+
 .card {
-    background-color: #CFC7C1;
     border: none;
+    border-radius: 0;
 }
 
 .card-body {
     padding: 0;
 }
 
-.list-group-item {
-    padding-top: 4.5px;
-    padding-bottom: 4.5px;
+#card-title {
+    font-weight: bold;
+}
+
+.card-img {
+    border-radius: 0;
+    height: 100%;
+    width: auto;
+}
+
+.user-input {
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#inputGroupSelect01 {
+    padding-left: 1.25rem;
+    border: none;
+}
+
+#price-input {
+    padding-left: 1.25rem;
+    border: none;
+}
+
+#email-input {
+    padding-left: 1.25rem;
+    border: none;
+}
+
+#submit-button {
+    background-color: #6A665A;
+    color: white;
+    border-color: #6A665A;
+    font-weight: bold;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+
+#submit-button:hover {
+    background-color: #302C23;
 }

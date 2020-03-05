@@ -11,7 +11,7 @@ class Post extends Component {
         this.state = {
             books: [],
             searchField: "",
-            condition: "Good",
+            condition: "",
             price: "",
             email: ""
         }
@@ -54,21 +54,22 @@ class Post extends Component {
         const image = this.state.books[0].volumeInfo.imageLinks.thumbnail;
         const title = this.state.books[0].volumeInfo.title;
         const author = this.state.books[0].volumeInfo.authors[0];
-        const publishedDate = this.state.books[0].volumeInfo.publishedDate;
+        // const publishedDate = this.state.books[0].volumeInfo.publishedDate;
         const ISBN = this.state.books[0].volumeInfo.industryIdentifiers[0].identifier;
         const condition = this.state.condition;
         const price = this.state.price;
         const email = this.state.email;
 
-        API.listBook(image, title, author, publishedDate, ISBN, condition, price, email).then(response => console.log(response.data));
+        API.listBook(image, title, author, ISBN, condition, price, email).then(response => console.log(response.data));
 
         const priceInput = document.querySelector("#price-input");
         const emailInput = document.querySelector("#email-input");
+        const conditionInput = document.querySelector("#inputGroupSelect01");
 
-        if (priceInput.value === "" || emailInput.value === "") {
-            alert("Please provide a price and valid email address.")
+        if (priceInput.value === "" || emailInput.value === "" || conditionInput.value === "") {
+            alert("Please provide the book condition, price, and a valid email address.")
         } else {
-            document.querySelector(".list").innerHTML = "";
+            this.setState({ books: [] })
             document.querySelector("#isbn-input").value = "";
         }
     }
@@ -83,7 +84,7 @@ class Post extends Component {
                 <BookList
                     books={this.state.books}
                     handleSearch={this.handleSearch}
-                    handleConditionChange={this.handleCondtionChange}
+                    handleConditionChange={this.handleConditionChange}
                     handlePriceChange={this.handlePriceChange}
                     handleEmailChange={this.handleEmailChange}
                     handleListingSubmit={this.handleListingSubmit}
