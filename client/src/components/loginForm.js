@@ -12,7 +12,7 @@ function LoginForm() {
   //Creating a login function to appear in the UI
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   //seting private info
-  const [privateInfo, setPrivateInfo] = useState({});
+  const [privateInfo] = useState({});
 
   function handleLoginSubmit(event) {
     event.preventDefault();

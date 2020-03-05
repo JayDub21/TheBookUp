@@ -2,7 +2,6 @@ import React, { Component } from "react";
 // import BookSearch from "../components/BookSearch";
 import BookDisplayList from "../components/BookDisplayList";
 import API from "../utils/API";
-import BookDisplay from "../components/BookDisplay";
 import NavBar from "../components/navBar";
 import BookSearchBar from "../components/BookSearchBar";
 
@@ -98,7 +97,7 @@ class Display extends Component {
                 const books = [];
                 for (var i = 0; i < response.data.length; i++) {
                     console.log(response.data[i].ISBN);
-                    if (response.data[i].ISBN == this.state.searchField) {
+                    if (response.data[i].ISBN === this.state.searchField) {
                         let bookObj = {
                             title: response.data[i].title,
                             author: response.data[i].author,
@@ -125,8 +124,6 @@ class Display extends Component {
         return (
             <div>
                 <NavBar />
-                <BookDisplay displayBook={this.displayBook} />
-                <BookDisplayList books={this.state.books} />
                 <BookSearchBar
                     searchISBN={this.searchISBN}
                     searchAuthor={this.searchAuthor}
