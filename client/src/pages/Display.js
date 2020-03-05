@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import BookDisplayList from "../components/BookDisplayList";
 import API from "../utils/API";
 import NavBar from "../components/navBar";
+
 import BookSearchBar from "../components/BookSearchBar";
 
 class Display extends Component {
@@ -97,7 +98,7 @@ class Display extends Component {
                 const books = [];
                 for (var i = 0; i < response.data.length; i++) {
                     console.log(response.data[i].ISBN);
-                    if (response.data[i].ISBN === this.state.searchField) {
+                    if (response.data[i].ISBN == this.state.searchField) {
                         let bookObj = {
                             title: response.data[i].title,
                             author: response.data[i].author,
@@ -107,10 +108,13 @@ class Display extends Component {
                             email: response.data[i].email,
                             price: response.data[i].price
                         }
+                        console.log("ISBN found");
                         books.push(bookObj);
                     } else {
+                        console.log(response.data[i].ISBN)
                         console.log("No ISBN found");
                     }
+
                 }
                 this.setState({ books: books });
             })
@@ -120,10 +124,10 @@ class Display extends Component {
         this.setState({ searchField: event.target.value })
     }
 
+
     render() {
         return (
             <div>
-                <NavBar />
                 <BookSearchBar
                     searchISBN={this.searchISBN}
                     searchAuthor={this.searchAuthor}
