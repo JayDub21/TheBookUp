@@ -35,25 +35,20 @@ const BookSearchBar = (props) => {
                     </div>
 
                     <div className="col-md-6 col-lg-4">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">ISBN</span>
+                        <form className="forms" onSubmit={props.searchISBN} action="">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">ISBN</span>
+                                </div>
+                                <input onChange={props.handleSearch} type="text" class="form-control" aria-label="ISBN" aria-describedby="basic-addon1" />
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+                                </div>
                             </div>
-                            <input type="text" class="form-control" aria-label="ISBN" aria-describedby="basic-addon1" />
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
-
-
-
-            <form className="forms" onSubmit={props.searchISBN} action="">
-                <input onChange={props.handleSearch} placeholder="Search by ISBN" type="text" />
-                <button type="Submit">Search</button>
-            </form>
         </div>
     )
 }

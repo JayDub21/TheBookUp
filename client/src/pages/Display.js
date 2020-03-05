@@ -102,7 +102,7 @@ class Display extends Component {
                 const books = [];
                 for (var i = 0; i < response.data.length; i++) {
                     console.log(response.data[i].ISBN);
-                    if (response.data[i].ISBN === this.state.searchField) {
+                    if (response.data[i].ISBN == this.state.searchField) {
                         let bookObj = {
                             id: response.data[i]._id,
                             title: response.data[i].title,
