@@ -2,11 +2,25 @@
 
 ### Project 3 - South of the Colorado
 
-**_Justin Wofford, Luke Duquette, Christopher Garcia, Henry Hawm_**
+#### [View The BookUp Here!](https://the-bookup.herokuapp.com/)
+
+**_Justin Wofford, Harrison Thomas, Leo Lopez, Andy Bickford_**
+
+#### Log In:
+
+![Log In](/client/src/img/logIn.png)
+
+#### Book Post:
+
+![Book Post](/client/src/img/bookPost.png)
+
+#### Book Search:
+
+![Book Search](/client/src/img/bookSearch.png)
 
 ## The problem
 
-There is a huge discrepancy between the price of new textbooks and the amount that students can resell them for. The BookUp is an app that allows students to put used textbooks up for sale to be bought by others who need the textbooks. The BookUp features a messaging system that allows the sellers and buyers to coordinate the details of the purchase. The BookUp also provides up to date price information for new copies of the book in comparison to the asking price provided by the seller. Our MVP will be focused on the UT Austin campus area but will have future scalability kept in mind.
+There is a huge discrepancy between the price of new textbooks and the amount that students can resell them for. The BookUp is an app that allows students to put used textbooks up for sale to be bought by others who need the textbooks.
 
 ## Market Analysis
 
