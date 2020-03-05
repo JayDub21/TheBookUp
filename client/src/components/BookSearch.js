@@ -18,7 +18,7 @@ const BookSearch = (props) => {
                         <div className="book-search">
                             <form onSubmit={props.searchBook} action="">
                                 <div className="input-group mb-3">
-                                    <input onChange={props.handleSearch} id="isbn-input" type="text" className="form-control" placeholder="ISBN Search" aria-label="ISBN Search" aria-describedby="button-addon2" />
+                                    <input onChange={props.handleSearch} id="isbn-input" type="text" className="form-control" placeholder="Your ISBN" aria-label="Your ISBN" aria-describedby="button-addon2" />
                                     <div className="input-group-append">
                                         <button className="btn btn-outline-secondary" type="submit" id="search-button">Search</button>
                                     </div>

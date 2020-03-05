@@ -76,8 +76,18 @@ class Post extends Component {
     render() {
         return (
             <div>
-                <BookSearch searchBook={this.searchBook} handleSearch={this.handleSearch} />
-                <BookList books={this.state.books} handleSearch={this.handleSearch} handleConditionChange={this.handleCondtionChange} handlePriceChange={this.handlePriceChange} handleEmailChange={this.handleEmailChange} handleListingSubmit={this.handleListingSubmit} />
+                <BookSearch
+                    searchBook={this.searchBook}
+                    handleSearch={this.handleSearch}
+                />
+                <BookList
+                    books={this.state.books}
+                    handleSearch={this.handleSearch}
+                    handleConditionChange={this.handleCondtionChange}
+                    handlePriceChange={this.handlePriceChange}
+                    handleEmailChange={this.handleEmailChange}
+                    handleListingSubmit={this.handleListingSubmit}
+                />
             </div>
         );
     }

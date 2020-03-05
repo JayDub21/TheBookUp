@@ -24,8 +24,36 @@ h1 {
     color: white;
 }
 
+#isbn-input:focus {
+    box-shadow: 0 0 0 0.2rem #adb1b4;
+    border: none;
+}
+
 #search-button {
-    background-color: #413b2d;
+    background-color: #6A665A;
     color: white;
-    border-color: #413b2d;
+    border-color: #6A665A;
+    font-weight: bold;
+}
+
+#search-button:focus {
+    box-shadow: 0 0 0 0.2rem #adb1b4;
+}
+
+#search-button:hover {
+    background-color: #302C23;
+}
+
+.card {
+    background-color: #CFC7C1;
+    border: none;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.list-group-item {
+    padding-top: 4.5px;
+    padding-bottom: 4.5px;
 }

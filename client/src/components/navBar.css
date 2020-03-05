@@ -8,6 +8,7 @@
 
 .navbar-toggler:focus {
     outline: none;
+    box-shadow: 0 0 0 0.2rem #adb1b4;
 }
 
 a.nav-link {
