@@ -1,5 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: #EEE9E2;
 }
 
 .jumbotron {
@@ -8,6 +9,7 @@ body {
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
+  margin-bottom: 35px;
 }
 
 #signup-jumbotron {
@@ -28,6 +30,7 @@ body {
 
 .login-signup {
   color: #6A665A;
+  font-weight: bold;
 }
 
 .login-signup:hover {
@@ -119,6 +122,57 @@ h1 {
   background-color: #302C23;
 }
 
-#isbn-searchbar {
+.search-form {
+  margin-bottom: 50px;
+}
+
+#title-search-btn {
+  background-color: #6A665A;
+  color: white;
+  border-color: #6A665A;
+  font-weight: bold;
+}
+
+#title-search-btn:hover {
+  background-color: #302C23;
+}
+
+#author-search-btn {
+  background-color: #7F553F;
+  color: white;
+  border-color: #7F553F;
+  font-weight: bold;
+}
+
+#author-search-btn:hover {
+  background-color: #513729;
+}
+
+#isbn-search-btn {
+  background-color: #7F6A4C;
+  color: white;
+  border-color: #7F6A4C;
+  font-weight: bold;
+}
+
+#isbn-search-btn:hover {
+  background-color: #514431;
+}
+
+#delete-button {
+  background-color: #C4B1A7;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 0;
+  width: 100%;
+}
+
+#delete-button:hover {
+  background-color: #7F553F;
+  color: white;
+}
+
+.list {
   margin-bottom: 50px;
 }

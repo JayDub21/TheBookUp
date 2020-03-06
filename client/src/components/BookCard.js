@@ -38,7 +38,7 @@ const BookCard = (props) => {
             <div className="container">
                 <div className="row">
                     <div className="col text-center">
-                        <button onClick={props.handleListingSubmit} className="btn btn-outline-secondary" type="button" id="submit-button">Submit</button>
+                        <button onClick={props.handleListingSubmit} className="btn btn-outline-none" type="button" id="submit-button">Submit</button>
                     </div>
                 </div>
             </div>

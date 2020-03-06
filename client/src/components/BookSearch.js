@@ -20,7 +20,7 @@ const BookSearch = (props) => {
                                 <div className="input-group mb-3">
                                     <input onChange={props.handleSearch} id="isbn-input" type="text" className="form-control" aria-label="Your ISBN" aria-describedby="button-addon2" />
                                     <div className="input-group-append">
-                                        <button className="btn btn-outline-secondary" type="submit" id="search-button">Search</button>
+                                        <button className="btn btn-outline-none" type="submit" id="search-button">Search</button>
                                     </div>
                                 </div>
                             </form>
