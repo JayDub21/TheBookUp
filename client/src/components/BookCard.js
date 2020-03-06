@@ -31,17 +31,18 @@ const BookCard = (props) => {
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="container">
-                <div className="row">
-                    <div className="col text-center">
                         <button onClick={props.handleListingSubmit} className="btn btn-outline-none" type="button" id="submit-button">Submit</button>
                     </div>
                 </div>
             </div>
+
+            {/* <div className="container">
+                <div className="row">
+                    <div className="col text-center">
+                        
+                    </div>
+                </div>
+            </div> */}
         </div>
     );
 }
