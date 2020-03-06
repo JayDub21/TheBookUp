@@ -1,5 +1,4 @@
 import React from "react";
-import "./BookDisplayCard.css";
 import API from "../utils/API";
 
 function deleteBook(id) {
@@ -24,10 +23,10 @@ const BookDisplayCard = (props) => {
                             <li className="list-group-item">ISBN {props.ISBN}</li>
                             <li className="list-group-item">{props.condition} Condition</li>
                             <li className="list-group-item">${props.price}.00</li>
-                            <li className="list-group-item">{props.email}</li>
+                            <li className="list-group-item"><i className="far fa-envelope fa-lg"></i> {props.email}</li>
                         </ul>
                     </div>
-                    <button onClick={() => deleteBook(props.id)} type="button">Delete</button>
+                    <button onClick={() => deleteBook(props.id)} id="delete-button" className="btn btn-outline-none" type="button">Delete</button>
                 </div>
             </div>
         </div>
