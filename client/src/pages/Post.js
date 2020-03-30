@@ -19,11 +19,18 @@ class Post extends Component {
 
     searchBook = (event) => {
         event.preventDefault();
-        request
-            .get("https://www.googleapis.com/books/v1/volumes?q=isbn:" + this.state.searchField)
-            .then((data) => {
-                this.setState({ books: [...data.body.items] })
-            })
+
+        const isbnInput = document.querySelector("#isbn-input");
+
+        if (isbnInput.value === "") {
+            return;
+        } else {
+            request
+                .get("https://www.googleapis.com/books/v1/volumes?q=isbn:" + this.state.searchField)
+                .then((data) => {
+                    this.setState({ books: [...data.body.items] })
+                })
+        }
     }
 
     handleSearch = (event) => {
@@ -54,7 +61,6 @@ class Post extends Component {
         const image = this.state.books[0].volumeInfo.imageLinks.thumbnail;
         const title = this.state.books[0].volumeInfo.title;
         const author = this.state.books[0].volumeInfo.authors[0];
-        // const publishedDate = this.state.books[0].volumeInfo.publishedDate;
         const ISBN = this.state.books[0].volumeInfo.industryIdentifiers[0].identifier;
         const condition = this.state.condition;
         const price = this.state.price;

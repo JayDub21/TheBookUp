@@ -8,7 +8,6 @@
 
 .navbar-toggler:focus {
     outline: none;
-    box-shadow: 0 0 0 0.2rem #adb1b4;
 }
 
 a.nav-link {
@@ -17,6 +16,7 @@ a.nav-link {
 
 .nav-item {
     text-align: right;
+    font-weight: bold;
 }
 
 .nav-item:hover .nav-link:hover {
@@ -27,12 +27,17 @@ a.nav-link {
 #sign-out {
     background: none;
     border: none;
-    color: white;
+    color: #D1D1D1;
     padding-left: none;
     width: 100%;
     padding-top: 8px;
     padding-bottom: 8px;
     text-align: right;
+    font-weight: bold;
+}
+
+#sign-out:focus {
+    outline: none;
 }
 
 #sign-out:hover {

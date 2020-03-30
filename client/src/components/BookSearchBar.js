@@ -8,13 +8,13 @@ const BookSearchBar = (props) => {
                 <div className="row justify-content-center">
                     <div className="col-md-6 col-lg-4">
                         <form className="forms" onSubmit={props.searchTitle} action="">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">Title</span>
+                            <div className="input-group mb-3">
+                                <div className="input-group-prepend">
+                                    <span className="input-group-text" id="basic-addon1">Title</span>
                                 </div>
-                                <input onChange={props.handleSearch} type="text" class="form-control" aria-label="Title" aria-describedby="basic-addon1" />
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Button</button>
+                                <input onChange={props.handleSearch} type="text" className="form-control" aria-label="Title" aria-describedby="basic-addon1" />
+                                <div className="input-group-append">
+                                    <button className="btn btn-outline-none" type="submit" id="title-search-btn">Search</button>
                                 </div>
                             </div>
                         </form>
@@ -22,13 +22,13 @@ const BookSearchBar = (props) => {
 
                     <div className="col-md-6 col-lg-4">
                         <form className="forms" onSubmit={props.searchAuthor} action="">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">Author</span>
+                            <div className="input-group mb-3">
+                                <div className="input-group-prepend">
+                                    <span className="input-group-text" id="basic-addon1">Author</span>
                                 </div>
-                                <input onChange={props.handleSearch} type="text" class="form-control" aria-label="Author" aria-describedby="basic-addon1" />
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+                                <input onChange={props.handleSearch} type="text" className="form-control" aria-label="Author" aria-describedby="basic-addon1" />
+                                <div className="input-group-append">
+                                    <button className="btn btn-outline-none" type="submit" id="author-search-btn">Search</button>
                                 </div>
                             </div>
                         </form>
@@ -36,13 +36,13 @@ const BookSearchBar = (props) => {
 
                     <div className="col-md-6 col-lg-4">
                         <form className="forms" onSubmit={props.searchISBN} action="">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">ISBN</span>
+                            <div className="input-group mb-3">
+                                <div className="input-group-prepend">
+                                    <span className="input-group-text" id="basic-addon1">ISBN</span>
                                 </div>
-                                <input onChange={props.handleSearch} type="text" class="form-control" aria-label="ISBN" aria-describedby="basic-addon1" />
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+                                <input onChange={props.handleSearch} type="text" className="form-control" aria-label="ISBN" aria-describedby="basic-addon1" />
+                                <div className="input-group-append">
+                                    <button className="btn btn-outline-none" type="submit" id="isbn-search-btn">Search</button>
                                 </div>
                             </div>
                         </form>

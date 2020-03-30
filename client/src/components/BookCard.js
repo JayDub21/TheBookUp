@@ -13,7 +13,6 @@ const BookCard = (props) => {
                             <ul className="list-group list-group-flush">
                                 <li id="card-title" className="list-group-item">{props.title}</li>
                                 <li className="list-group-item">{props.author}</li>
-                                {/* <li className="list-group-item">Published {props.publishedDate}</li> */}
                                 <li className="list-group-item">ISBN {props.ISBN}</li>
                                 <li className="user-input list-group-item">
                                     <select onChange={props.handleConditionChange} className="custom-select" id="inputGroupSelect01">
@@ -31,14 +30,7 @@ const BookCard = (props) => {
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="container">
-                <div className="row">
-                    <div className="col text-center">
-                        <button onClick={props.handleListingSubmit} className="btn btn-outline-secondary" type="button" id="submit-button">Submit</button>
+                        <button onClick={props.handleListingSubmit} className="btn btn-outline-none" type="button" id="submit-button">Submit</button>
                     </div>
                 </div>
             </div>
