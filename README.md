@@ -3,6 +3,10 @@
 ### Project 3 - South of the Colorado
 
 #### [View The BookUp Here!](https://the-bookup.herokuapp.com/)
+##### Guest Login:
+Username: guest@example.com
+Password: 1234
+
 
 **_Justin Wofford, Harrison Thomas, Leo Lopez, Andy Bickford_**
 
