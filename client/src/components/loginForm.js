@@ -18,7 +18,7 @@ function LoginForm() {
     event.preventDefault();
     API.login(email, password).then(response => {
       setIsLoggedIn(true);
-      window.location.pathname = "/post"
+      window.location.pathname = "/display"
       // axios.get("/api/user/dashboard")
       // .then(response => {
       //   setPrivateInfo({ secret: response.data });
